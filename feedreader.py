@@ -105,20 +105,39 @@ def parse_row(row):
     }
 
 
-def similar_name(a, b):
-    """Один и тот же ник, прочитанный по-разному: похож по буквам или один — обрезанное начало другого
-    (строка ленты ещё «выезжает», и OCR успел прочитать только «[722]» вместо «[722] Eskapist»)."""
+TAG_RE = re.compile(r"[\[(][^\])]{0,8}[\])]")
+
+
+def core_name(name):
+    """Ник без тега клана и мусора: «[от] FLEX» -> «flex», «[SMG]Mackan025» -> «mackan025»."""
+    from shoptip import loose
+    return loose(TAG_RE.sub(" ", name))
+
+
+def similar_name(a, b, threshold=0.7):
+    """Один и тот же ник, прочитанный по-разному:
+    - один — обрезанное начало другого (строка ленты ещё «выезжает»: «[722]» вместо «[722] Eskapist»);
+    - один содержится в другом (OCR приклеил мусор: «[от] FLEX» и «FLEX»);
+    - похожи по буквам — с тегом клана и без него."""
     na, nb = norm(a), norm(b)
     if min(len(na), len(nb)) >= 3 and (na.startswith(nb) or nb.startswith(na)):
         return True
-    return same_player(a, b, 0.7)
+    ca, cb = core_name(a), core_name(b)
+    if min(len(ca), len(cb)) >= 3 and (ca in cb or cb in ca):
+        return True
+    return (same_player(a, b, threshold) or
+            (ca and cb and difflib.SequenceMatcher(None, ca, cb).ratio() >= threshold))
 
 
 def best_reading(values):
-    """Из нескольких прочтений одного поля берём самое частое, при равенстве — самое длинное."""
+    """Из нескольких прочтений одного поля берём самое частое, при равенстве — самое похожее на остальные
+    (а не самое длинное: длиннее обычно то, к чему OCR приклеил мусор, — «[17АтЈ Nikita»)."""
     values = [v for v in values if v not in ("", "?")] or values
     counts = Counter(values)
-    return max(counts, key=lambda v: (counts[v], len(v)))
+
+    def closeness(v):
+        return sum(difflib.SequenceMatcher(None, norm(v), norm(o)).ratio() * n for o, n in counts.items())
+    return max(counts, key=lambda v: (counts[v], closeness(v)))
 
 
 class FeedReader:
@@ -134,7 +153,15 @@ class FeedReader:
         self.done = []     # недавно выданные — чтобы поздно всплывшее прочтение не стало новым убийством
 
     def _matches(self, kill, readings):
-        return any(similar_name(r["killer"], kill["killer"]) and similar_name(r["victim"], kill["victim"]) for r in readings)
+        # Если убийца совпал уверенно, ник жертвы сравниваем мягче: одного и того же игрока OCR может прочитать
+        # совсем по-разному («SMG ] МасЕ-п—22-5.» и «[SMG]Mackan025»), а два разных убийства одним игроком
+        # за пару секунд почти всегда — жертвы с совсем непохожими никами.
+        for r in readings:
+            if similar_name(r["killer"], kill["killer"], 0.85) and similar_name(r["victim"], kill["victim"], 0.5):
+                return True
+            if similar_name(r["killer"], kill["killer"]) and similar_name(r["victim"], kill["victim"]):
+                return True
+        return False
 
     def read(self, region: Image.Image, t: float):
         """region — область KILLFEED в масштабе 3440x1440. Возвращает убийства, которые окончательно ушли из ленты."""
@@ -175,12 +202,11 @@ class FeedReader:
                 "icon": max(rs, key=lambda r: r["icon"].width)["icon"],
                 "readings": len(rs),
             }
-            if same_player(kill["killer"], self.nick):
-                kill["mine"] = "убил"
-            elif same_player(kill["victim"], self.nick):
-                kill["mine"] = "умер"
-            else:
-                kill["mine"] = ""
+            # «ты это или нет» — по всем прочтениям: хватит одного, где ник прочитан чисто
+            killed = any(similar_name(r["killer"], self.nick, 0.8) for r in rs)
+            died = any(similar_name(r["victim"], self.nick, 0.8) for r in rs)
+            # ты и убийца, и жертва — самоубийство (разбился на вертолёте, своя граната): это смерть, не убийство
+            kill["mine"] = "умер" if died else "убил" if killed else ""
             out.append(kill)
         return sorted(out, key=lambda k: k["t"])
 
