@@ -1,102 +1,107 @@
 # WARDOGS OCR
 
-Неофициальный помощник для [WARDOGS](https://store.steampowered.com/app/1867240/WARDOGS/): читает то, что игра показывает
-на экране, и превращает это в цифры и статистику.
+[Русский](README.ru.md) · **English**
 
-> Не связан с BULKHEAD или Team17. Программа **не трогает процесс игры**, не читает её память, не перехватывает сеть
-> и **ничего не нажимает за игрока** — она только получает картинку окна через Windows Graphics Capture
-> (тот же механизм, что «Захват окна» в OBS) и распознаёт текст встроенным OCR Windows.
+An unofficial companion tool for [WARDOGS](https://store.steampowered.com/app/1867240/WARDOGS/): it reads what the game
+shows on screen and turns it into numbers and statistics.
 
-## Что умеет
+> Not affiliated with BULKHEAD or Team17. The program **does not touch the game process**, does not read its memory,
+> does not intercept network traffic and **never presses anything for the player** — it only receives the image of the
+> game window through Windows Graphics Capture (the same mechanism as OBS "Window Capture") and recognises text with
+> the built-in Windows OCR.
 
-| Функция | Как работает |
+## Features
+
+| Feature | How it works |
 |---|---|
-| **Настоящие цифры обвесов** | В магазине и инвентаре наводишь мышь на обвес — рядом появляется окошко с процентами (отдача, разброс, время прицеливания, скорость экипировки) вместо игровых «умеренное снижение…». |
-| **Итог сборки оружия** | В инвентаре и при обыске считает, что дают все модули на оружии вместе. Веса в ячейках включаются клавишей **F**. Эффекты перемножаются (по [разбору WardogTools](https://wardogtools.gg/methodology/recoil/)). |
-| **Трекер убийств** | Читает ленту убийств: кто кого, из какого оружия (по иконке), с какой дистанции. |
-| **Журнал урона** | На экране смерти нажми **B** — программа прочитает журнал: урон по частям тела, попадания, убийства и все денежные начисления. |
-| **Итоги матча** | Победа/поражение, заработано, потрачено, прибыль. |
-| **Страница статистики** | Кнопка «Статистика»: K/D, оружие, куда попадаешь, кто тебя чаще убивает, на чём зарабатываешь, лучшие игроки, мета оружия, история сессий. Всё локально, в браузере. |
+| **Real attachment numbers** | Hover an attachment in the shop or inventory — a small window shows the actual percentages (recoil, spread, ADS time, equip speed) instead of the game's "moderate reduction…". |
+| **Weapon build totals** | In the inventory and when looting, sums up what all attachments on a weapon give together. Slot weights are shown with **F**. Effects are multiplied (per the [WardogTools analysis](https://wardogtools.gg/methodology/recoil/)). |
+| **Kill tracker** | Reads the kill feed: who killed whom, with which weapon (by icon), from what distance. |
+| **Damage log** | Press **B** on the death screen — the program reads the log: damage by body part, hits, kills and every money reward. |
+| **Match results** | Victory/defeat, money earned, spent, profit. |
+| **Statistics page** | The "Statistics" button: K/D, weapons, where you hit, who kills you most, how you earn money, top players, weapon meta, session history. Everything stays local, opens in your browser. |
 
-## Запуск
+## Getting started
 
-**Готовая программа:** скачай `WARDOGS-OCR.zip` из [Releases](../../releases), распакуй, запусти `WARDOGS-OCR.exe`,
-впиши свой ник, отметь нужное и нажми «Старт». Данные сохраняются в `Документы\WARDOGS-OCR`.
+**Ready-to-use program:** download `WARDOGS-OCR.zip` from [Releases](../../releases), unzip it, run `WARDOGS-OCR.exe`,
+enter your nickname, tick what you need and press "Start". Data is saved to `Documents\WARDOGS-OCR`.
 
-Требования:
-- Windows 10/11, игра в режиме **«Оконный без рамки»**;
-- **русский OCR Windows**: Параметры → Время и язык → Язык и регион → Русский. Без него программа предупредит при запуске.
+Requirements:
+- Windows 10/11, the game in **"Windowed Fullscreen"** (borderless) mode;
+- **Russian Windows OCR**: Settings → Time & language → Language & region → add Russian. It is needed even for the
+  English game (it reads both Cyrillic and Latin). The program warns you at startup if it is missing.
 
-**Из исходников** (Python 3.12):
+**From source** (Python 3.12):
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe app.py                  # окно с настройками
+.\.venv\Scripts\python.exe app.py                  # settings window
 ```
 
-Собрать exe: `powershell -ExecutionPolicy Bypass -File build.ps1` (результат — `dist\WARDOGS-OCR.zip`).
+Build the exe: `powershell -ExecutionPolicy Bypass -File build.ps1` (result: `dist\WARDOGS-OCR.zip`).
 
-## Языки / Languages
+## Languages
 
-- **Интерфейс программы** — русский или английский (выбор в окне программы; по умолчанию — по языку Windows).
-  *The program UI is available in Russian and English (selector in the main window).*
-- **Язык игры** выбирать не нужно: распознавание понимает русскую и английскую версию игры одновременно.
-  Названия и цифры обвесов есть на обоих языках.
-  *No need to choose the game language — both Russian and English game text is recognised.*
-- ⚠️ Английская версия игры пока проверена только частично: подсказки обвесов — по английским данным wardogs.zone,
-  названия вкладок, журнала урона и экрана итогов на английском — предположение, ждут проверки на записи.
-  *English game support is partially verified; screenshots of the English UI are welcome.*
-- Для работы нужен **русский OCR Windows** даже для английской игры — он читает и кириллицу, и латиницу.
+- **Program UI** — Russian or English (selector in the main window; defaults to your Windows language).
+- **Game language** doesn't need to be chosen: both the Russian and the English game text are recognised.
+  Attachment names and numbers are available in both languages.
+- ⚠️ The English game version is only partially verified: attachment tooltips rely on English data from wardogs.zone,
+  while the English names of menu tabs, the damage log and the match result screen are educated guesses awaiting a
+  check on a recording. Screenshots of the English UI are very welcome (open an issue).
 
-## Нагрузка
+## Performance
 
-Главный рычаг — «Проверять экран каждые N с» в окне программы. Распознавание текста — это основная работа процессора;
-реже проверки — меньше нагрузка, но подсказки появляются позже, а короткие строки ленты могут пропасть.
-Программа работает с пониженным приоритетом, чтобы не отнимать время у игры.
+The main knob is "Check the screen every N s" in the program window. Text recognition is the main CPU work: checking
+less often lowers the load, but hints appear later and short kill feed lines may be missed. The program runs at a lower
+process priority so it doesn't take time away from the game.
 
-## Ограничения (честно)
+## Limitations (honestly)
 
-- **Разрешение экрана.** Интерфейс игры масштабируется по высоте экрана, программа это учитывает (`layout.py`).
-  Проверено на записях:
+- **Screen resolution.** The game UI scales with screen height; the program accounts for that (`layout.py`).
+  Tested on recordings:
 
-  | Разрешение | Лента убийств | Подсказки обвесов | Итог сборки |
+  | Resolution | Kill feed | Attachment tooltips | Build totals |
   |---|---|---|---|
   | 3440×1440 (21:9) | ✅ | ✅ | ✅ |
-  | 1920×1080 (16:9) | ✅ | ✅ | ⚠️ веса в ячейках читаются частично |
-  | 1600×900 (16:9) | ⚠️ ники с ошибками, оружие часто «?» | ✅ | ❌ веса слишком мелкие |
+  | 1920×1080 (16:9) | ✅ | ✅ | ⚠️ slot weights read partially |
+  | 1600×900 (16:9) | ⚠️ nickname errors, weapon often "?" | ✅ | ❌ weights too small |
 
-  Чем выше разрешение, тем точнее: на 1080p и ниже мелкий текст на пределе возможностей OCR.
-  Журнал урона и экран итогов на 16:9 ещё не проверены на записи.
-- **Ники** распознаются с ошибками; похожие варианты склеиваются, но не всегда идеально.
-- **Названия оружия** в ленте — по иконкам (папка `templates/`), часть названий подобрана по силуэту.
-- **Журнал урона** виден не целиком — чем чаще его открываешь (B при каждой смерти), тем полнее статистика.
-- **Цифры обвесов** — с фанатского сайта [wardogs.zone](https://wardogs.zone), не официальные; после патчей могут отставать.
+  Higher resolution means better accuracy: at 1080p and below small text is at the limit of what OCR can read.
+  The damage log and match result screen haven't been verified at 16:9 yet.
+- **Nicknames** are recognised with errors; similar variants are merged, but not always perfectly.
+- **Weapon names** in the kill feed come from icons (`templates/` folder); some names were matched by silhouette.
+- **The damage log** is only partly visible — the more often you open it (B on every death), the fuller your stats.
+- **Attachment numbers** come from the fan site [wardogs.zone](https://wardogs.zone), not official; they may lag behind after patches.
 
-## Данные
+## Data
 
-Цифры обвесов — с сайта **[wardogs.zone](https://wardogs.zone)**, используются **с разрешения автора сайта**.
-Спасибо ему! Таблица лежит в `data/attachments.json`; обновить её после патча игры: удалить `data/cache/`
-и запустить `scrape_attachments.py` (качает страницы `/database/` по одной в секунду, в рамках robots.txt).
+Attachment numbers are from **[wardogs.zone](https://wardogs.zone)**, used **with the site owner's permission** — thank
+you! The table is in `data/attachments.json`; to refresh it after a game patch, delete `data/cache/` and run
+`scrape_attachments.py` (it fetches `/database/` pages one per second, within robots.txt).
 
-## Устройство (для разработчиков)
+## Project structure (for developers)
 
-| Файл | Что делает |
+| File | What it does |
 |---|---|
-| `app.py` | окно с настройками, точка входа exe |
-| `wardogs.py` | рабочий цикл: захват, определение экрана, всё распознавание; консольный запуск |
-| `live.py` | захват окна (Windows Graphics Capture), сессия и файлы |
-| `feedreader.py` | лента убийств: OCR, разбор строк, склейка повторов |
-| `icons.py`, `templates/` | распознавание оружия по иконке |
-| `shoptip.py`, `overlay.py` | подсказка предмета и окошки поверх игры |
-| `builds.py` | итог сборки оружия |
-| `journal.py`, `damagelog.py` | журнал урона |
-| `endscreen.py` | экран итогов матча |
-| `stats.py` | страница статистики |
-| `winocr.py` | обёртка над OCR Windows |
-| `scrape_attachments.py` | сбор таблицы обвесов |
-| `killfeed.py`, `cluster_icons.py`, `apply_labels.py`, `match_refs.py`, `reprocess.py` | инструменты: разбор видео, подготовка эталонов, пересчёт сессий |
+| `app.py` | settings window, exe entry point |
+| `wardogs.py` | main loop: capture, screen detection, all recognition; console mode |
+| `live.py` | window capture (Windows Graphics Capture), session and files |
+| `feedreader.py` | kill feed: OCR, row parsing, duplicate merging |
+| `icons.py`, `templates/` | weapon recognition by icon |
+| `shoptip.py`, `overlay.py` | item tooltip and on-top windows |
+| `builds.py` | weapon build totals |
+| `journal.py`, `damagelog.py` | damage log |
+| `endscreen.py` | match result screen |
+| `stats.py` | statistics page |
+| `i18n.py` | program UI texts in Russian and English |
+| `layout.py` | how the game UI behaves at different resolutions |
+| `winocr.py` | Windows OCR wrapper |
+| `scrape_attachments.py` | builds the attachment table |
+| `killfeed.py`, `cluster_icons.py`, `apply_labels.py`, `match_refs.py`, `reprocess.py` | tools: video analysis, icon templates, re-processing sessions |
 
-## Лицензия
+Code comments are in Russian.
 
-MIT — см. [LICENSE](LICENSE).
+## License
+
+MIT — see [LICENSE](LICENSE).
