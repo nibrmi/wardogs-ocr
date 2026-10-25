@@ -125,10 +125,8 @@ class ShopTip:
         return any(w in text for w in MENU_WORDS)
 
     def read(self, screen: Image.Image, tabs=None):
-        """screen — область SEARCH кадра (в масштабе 3440x1440). Возвращает
+        """screen — весь кадр, приведённый к высоте 1440 (layout.to_base). Возвращает
         {"title", "kind", "pos", "item", "score"} или None. pos — угол названия в координатах кадра."""
-        if screen.size != (SEARCH[2] - SEARCH[0], SEARCH[3] - SEARCH[1]):
-            screen = screen.crop(SEARCH)
         self.last_lines = []
         if not self.shop_open(screen, tabs):
             return None
@@ -138,6 +136,10 @@ class ShopTip:
             return None
         title, kind, pos, weight = tip
         item, score = match(title, self.items, weight)
+        if item is None:
+            from builds import weapon_of
+            if weapon_of(title):
+                return None  # подсказка оружия, а не обвеса — в таблице обвесов его и не должно быть
         return {"title": title, "kind": kind, "pos": pos, "weight": weight, "item": item, "score": score}
 
 

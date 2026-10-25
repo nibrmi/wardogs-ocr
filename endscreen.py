@@ -50,12 +50,13 @@ def money(text):
 
 def read(engine, frame: Image.Image):
     """frame — кадр 3440x1440. Возвращает dict с итогами или None, если это не экран итогов."""
-    title = " ".join(l["text"] for l in recognize(engine, bright(frame.crop(TITLE), scale=1)))
+    from layout import centered  # экран итогов стоит по центру — на экранах другой ширины сдвигаем
+    title = " ".join(l["text"] for l in recognize(engine, bright(frame.crop(centered(TITLE, frame.width)), scale=1)))
     result = "победа" if "ПОБЕД" in title else "поражение" if "ПОРАЖ" in title else None
     if result is None:
         return None
     out = {"result": result}
-    for text in rows_of(recognize(engine, bright(frame.crop(PANEL)))):
+    for text in rows_of(recognize(engine, bright(frame.crop(centered(PANEL, frame.width))))):
         for word, field in ROWS.items():
             if word in text.upper():
                 value = money(text)

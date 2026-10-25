@@ -47,16 +47,19 @@ def journal_open(lines):
 
 
 def is_open(engine, frame):
-    """Быстрая проверка по узкой полоске со вкладками «НАНЕСЕННЫЙ УЩЕРБ / … / ДЕНЬГИ»."""
-    return journal_open(recognize(engine, ImageOps.grayscale(frame.crop(TABS_STRIP))))
+    """Быстрая проверка по узкой полоске со вкладками «НАНЕСЕННЫЙ УЩЕРБ / … / ДЕНЬГИ».
+    Журнал стоит по центру экрана, поэтому на экранах другой ширины полоску сдвигаем (layout.centered)."""
+    from layout import centered
+    return journal_open(recognize(engine, ImageOps.grayscale(frame.crop(centered(TABS_STRIP, frame.width)))))
 
 
 def read_frame(engine, frame):
     """Строки журнала с одного кадра 3440x1440 (картинка или путь к файлу): [(время, текст), ...] или None.
     (Яркий канал, как на экране итогов, здесь хуже: знак «$» перед зелёной суммой начинает читаться как «31».)"""
+    from layout import centered
     if isinstance(frame, str):
         frame = Image.open(frame)
-    img = ImageOps.grayscale(frame.crop(BOX))
+    img = ImageOps.grayscale(frame.crop(centered(BOX, frame.width)))
     lines = recognize(engine, img.resize((img.width * 2, img.height * 2), Image.LANCZOS))
     if not journal_open(lines):
         return None

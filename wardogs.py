@@ -27,9 +27,11 @@ from builds import Builds
 from endscreen import EndScreen
 from feedreader import FeedReader
 from live import (Session, WindowGrabber, client_rect_on_screen, find_game_window, lower_priority,
-                  scaled_killfeed, to_base_size, user32)
-from overlay import HIDE_AFTER, BuildPanels, Overlay, to_search_size
-from shoptip import SEARCH, ShopTip
+                  user32)
+from feedreader import KILLFEED
+from layout import to_base
+from overlay import HIDE_AFTER, BuildPanels, Overlay
+from shoptip import ShopTip
 
 
 @dataclass
@@ -78,8 +80,8 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
             continue
 
         x, y, w, h = client_rect_on_screen(hwnd)
-        k = frame.height / SEARCH[3]
-        base = to_search_size(frame)  # кадр в масштабе 3440x1440 — под него заданы все координаты
+        # кадр к высоте 1440 с сохранением пропорций: интерфейс игры масштабируется по высоте (см. layout.py)
+        base, k = to_base(frame)
         tabs = st.tabs_text(base)     # по строке вкладок понимаем, какое меню открыто
         in_shop = st.shop_open(base, tabs)
 
@@ -112,7 +114,7 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
         if settings.killfeed and not in_menu and not journal_now and tick - last_feed >= settings.feed_interval:
             last_feed = tick
             t = tick - start
-            region = to_base_size(frame.crop(scaled_killfeed(frame.width, frame.height)))
+            region = base.crop(KILLFEED)  # лента прижата к левому краю — координаты те же на любой ширине
             session.save_shot(region, t)
             session.emit(reader.read(region, t))
             feed_reads += 1
@@ -144,7 +146,7 @@ class OverlayHost:
             self.misses = 0
             px, py = r["pos"]
             k = msg["k"]
-            self.tip.show(r, msg["wx"] + (SEARCH[0] + px) * k, msg["wy"] + (SEARCH[1] + py) * k, k)
+            self.tip.show(r, msg["wx"] + px * k, msg["wy"] + py * k, k)
         elif msg["kind"] == "builds":
             self.builds.show(msg["list"], msg.get("wx", 0), msg.get("wy", 0), msg.get("k", 1.0))
 

@@ -22,7 +22,8 @@ import tkinter as tk
 from PIL import Image, ImageGrab
 
 from live import WindowGrabber, client_rect_on_screen, find_game_window, lower_priority, user32
-from shoptip import SEARCH, ShopTip
+from layout import to_base
+from shoptip import ShopTip
 
 BASE_H = 1440
 INTERVAL = 0.4
@@ -169,16 +170,6 @@ class BuildPanels:
         self.show([], 0, 0, 1.0)
 
 
-def to_search_size(img):
-    size = (SEARCH[2] - SEARCH[0], SEARCH[3] - SEARCH[1])
-    return img if img.size == size else img.resize(size, Image.LANCZOS)
-
-
-def search_region(w, h):
-    k = h / BASE_H
-    return tuple(round(v * k) for v in SEARCH)
-
-
 def worker(out: queue.Queue, args, stop: threading.Event):
     """Отдельный поток: снимки и распознавание. В очередь кладёт (результат, x окна, y окна, масштаб)."""
     st = ShopTip()
@@ -199,7 +190,7 @@ def worker(out: queue.Queue, args, stop: threading.Event):
         if hwnd != grabber_hwnd or (grabber and grabber.closed):
             if grabber:
                 grabber.stop()
-            grabber, grabber_hwnd = (WindowGrabber(hwnd, region=search_region, finish=to_search_size, interval_ms=300)
+            grabber, grabber_hwnd = (WindowGrabber(hwnd, region=None, finish=lambda img: to_base(img)[0], interval_ms=300)
                                      if hwnd else None), hwnd
         if hwnd is None or user32.IsIconic(hwnd):
             if not waiting:
@@ -251,7 +242,7 @@ def main():
                     continue
                 misses = 0
                 px, py = r["pos"]
-                box = overlay.show(r, wx + (SEARCH[0] + px) * k, wy + (SEARCH[1] + py) * k, k)
+                box = overlay.show(r, wx + px * k, wy + py * k, k)
                 name = r["item"]["name_ru"] if r["item"] else "нет в таблице"
                 if label:
                     print(f"{label}: «{r['title']}» -> {name}")
