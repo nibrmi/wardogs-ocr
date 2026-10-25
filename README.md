@@ -76,3 +76,7 @@ python -m venv .venv
 | `winocr.py` | обёртка над OCR Windows |
 | `scrape_attachments.py` | сбор таблицы обвесов |
 | `killfeed.py`, `cluster_icons.py`, `apply_labels.py`, `match_refs.py`, `reprocess.py` | инструменты: разбор видео, подготовка эталонов, пересчёт сессий |
+
+## Лицензия
+
+MIT — см. [LICENSE](LICENSE).
