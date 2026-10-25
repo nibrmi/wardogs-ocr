@@ -89,6 +89,8 @@ class Overlay:
                     tk.Label(row, text=value, font=bold, fg=colour(stat, value), bg=BG, anchor="e").pack(side="right", padx=(16, 0))
                 if item.get("price"):
                     tk.Label(self.frame, text=f"Цена {item['price']}", font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x", pady=(4, 0))
+                tk.Label(self.frame, text="данные: wardogs.zone", font=("Segoe UI", max(8, round(8 * k))),
+                         fg="#7d838b", bg=BG, anchor="w").pack(fill="x")
             else:
                 tk.Label(self.frame, text=f"Нет в таблице:\n{result['title']}", font=font, fg=NEUTRAL, bg=BG, justify="left").pack()
             self.shown_key = key

@@ -123,6 +123,7 @@ class App:
         self.log.pack(fill="both", expand=True, **pad)
         sys.stdout = sys.stderr = LogWriter(self.log)
         print(f"Данные сохраняются в {user_dir()}")
+        print("Цифры обвесов — wardogs.zone (с разрешения автора). Код: github.com/nibrmi/wardogs-ocr")
         root.protocol("WM_DELETE_WINDOW", self.close)
 
     def _tick_text(self):

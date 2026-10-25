@@ -32,7 +32,6 @@
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe scrape_attachments.py   # один раз: собрать таблицу обвесов
 .\.venv\Scripts\python.exe app.py                  # окно с настройками
 ```
 
@@ -64,9 +63,9 @@ python -m venv .venv
 
 ## Данные
 
-Цифры обвесов собирает `scrape_attachments.py` со страниц [wardogs.zone](https://wardogs.zone/database/attachments)
-(разрешённых в их robots.txt, по одной странице в секунду). Сама таблица в репозиторий не входит до согласования
-с автором сайта.
+Цифры обвесов — с сайта **[wardogs.zone](https://wardogs.zone)**, используются **с разрешения автора сайта**.
+Спасибо ему! Таблица лежит в `data/attachments.json`; обновить её после патча игры: удалить `data/cache/`
+и запустить `scrape_attachments.py` (качает страницы `/database/` по одной в секунду, в рамках robots.txt).
 
 ## Устройство (для разработчиков)
 

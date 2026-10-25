@@ -15,7 +15,6 @@ selftest.txt
 clusters/
 data/cache/
 
-# таблица обвесов собрана с wardogs.zone — не выкладываем, пока нет разрешения автора сайта
-# (собрать у себя: python scrape_attachments.py)
-data/attachments.json
+# таблица обвесов (data/attachments.json) — с wardogs.zone, публикуется с разрешения автора сайта;
+# csv — та же таблица для Excel, генерируется scrape_attachments.py
 data/attachments.csv
