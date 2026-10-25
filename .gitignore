@@ -1,0 +1,21 @@
+# окружение и сборка
+.venv/
+__pycache__/
+build/
+dist/
+*.spec
+
+# личные данные игрока — не публикуем
+sessions/
+out/
+settings.json
+selftest.txt
+
+# промежуточное
+clusters/
+data/cache/
+
+# таблица обвесов собрана с wardogs.zone — не выкладываем, пока нет разрешения автора сайта
+# (собрать у себя: python scrape_attachments.py)
+data/attachments.json
+data/attachments.csv
