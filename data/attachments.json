@@ -22,6 +22,24 @@
   ],
   "fits": [
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-15%",
+   "Horizontal recoil": "+5%",
+   "Spread": "-12%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Moderate spread reduction",
+   "Moderate vertical recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty",
+   "Minor horizontal recoil punishment"
+  ],
+  "fits_en": [
+   "M14"
   ]
  },
  {
@@ -40,6 +58,18 @@
   ],
   "cons": [],
   "fits": [
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.07 kg",
+   "ADS time": "-3%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "M14"
   ]
  },
@@ -66,6 +96,24 @@
   ],
   "fits": [
    "М1911"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Vertical recoil": "-14%",
+   "Horizontal recoil": "-2%",
+   "Spread": "-2%",
+   "ADS time": "+3%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "M1911"
   ]
  },
  {
@@ -93,6 +141,26 @@
   ],
   "fits": [
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "1.2 kg",
+   "Vertical recoil": "-10%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-10%",
+   "ADS time": "+12%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate spread reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AMR 50"
   ]
  },
  {
@@ -119,6 +187,25 @@
   ],
   "fits": [
    "М500"
+  ],
+  "stats_en": {
+   "Weight": "0.8 kg",
+   "Vertical recoil": "-12%",
+   "Horizontal recoil": "-5%",
+   "Spread": "-8%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduces sound profile",
+   "Moderate muzzle flash reduction",
+   "Moderate recoil reduction",
+   "Moderate spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "M500"
   ]
  },
  {
@@ -160,6 +247,40 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.4 kg",
+   "ADS time": "+5%",
+   "Zoom": "2.5x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -181,6 +302,22 @@
   "fits": [
    "T-21",
    "М4",
+   "M249 SAW",
+   "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.09 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "T-21",
+   "M4",
    "M249 SAW",
    "Galil"
   ]
@@ -209,6 +346,27 @@
   "fits": [
    "T-21",
    "М4",
+   "M249 SAW",
+   "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "-2%",
+   "Spread": "-4%",
+   "ADS time": "+6%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "T-21",
+   "M4",
    "M249 SAW",
    "Galil"
   ]
@@ -247,6 +405,35 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.43 kg",
+   "ADS time": "+10%",
+   "Zoom": "3.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "M249 SAW",
+   "M500",
+   "BMR-308",
+   "SVD",
+   "PKM",
+   "SV98",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -271,6 +458,24 @@
    "Винтовка Scout Rifle TD",
    "МК22",
    "АМР 50",
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.63 kg",
+   "ADS time": "+12%",
+   "Zoom": "3.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Strong ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
    "M14"
   ]
  },
@@ -312,6 +517,39 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.09 kg",
+   "Vertical recoil": "+5%",
+   "Horizontal recoil": "-18%",
+   "Spread": "-18%",
+   "ADS time": "-17%",
+   "Equip speed": "+13%"
+  },
+  "pros_en": [
+   "Moderate horizontal recoil reduction",
+   "Moderate spread reduction",
+   "Moderate ADS speed improvements",
+   "Moderate equip speed improvements"
+  ],
+  "cons_en": [
+   "Minor vertical recoil penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -348,6 +586,35 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.42 kg",
+   "ADS time": "+10%",
+   "Zoom": "4.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "M249 SAW",
+   "M500",
+   "BMR-308",
+   "SVD",
+   "PKM",
+   "SV98",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -372,6 +639,24 @@
    "Винтовка Scout Rifle TD",
    "МК22",
    "АМР 50",
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.98 kg",
+   "ADS time": "+15%",
+   "Zoom": "6.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Strong ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
    "M14"
   ]
  },
@@ -398,6 +683,24 @@
    "МК22",
    "АМР 50",
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.98 kg",
+   "ADS time": "+15%",
+   "Zoom": "6.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Strong ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14"
   ]
  },
  {
@@ -423,6 +726,24 @@
    "МК22",
    "АМР 50",
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.73 kg",
+   "ADS time": "+12%",
+   "Zoom": "6.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14"
   ]
  },
  {
@@ -447,6 +768,24 @@
    "Винтовка Scout Rifle TD",
    "МК22",
    "АМР 50",
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.7 kg",
+   "ADS time": "+15%",
+   "Zoom": "6.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
    "M14"
   ]
  },
@@ -486,6 +825,37 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.08 kg",
+   "Vertical recoil": "-6%",
+   "Horizontal recoil": "-25%",
+   "Spread": "-22%",
+   "ADS time": "-15%",
+   "Equip speed": "+10%"
+  },
+  "pros_en": [
+   "Strong horizontal recoil reduction",
+   "Strong spread reduction",
+   "Moderate ADS speed improvements",
+   "Moderate equip speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -504,6 +874,18 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "AMP-9"
+  ],
+  "stats_en": {
+   "Weight": "1.46 kg",
+   "Vertical recoil": "+20%",
+   "Horizontal recoil": "+18%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "AMP-9"
   ]
  },
@@ -532,6 +914,26 @@
   ],
   "fits": [
    "AMP-9"
+  ],
+  "stats_en": {
+   "Weight": "0.4 kg",
+   "Vertical recoil": "-6%",
+   "Horizontal recoil": "-5%",
+   "Spread": "-8%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AMP-9"
   ]
  },
  {
@@ -551,6 +953,19 @@
   ],
   "cons": [],
   "fits": [
+   "AMP-9"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "AMP-9"
   ]
  },
@@ -576,6 +991,23 @@
   ],
   "fits": [
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "0.45 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "-8%",
+   "Spread": "-1%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AMR 50"
   ]
  },
  {
@@ -616,6 +1048,39 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.11 kg",
+   "Vertical recoil": "+2%",
+   "Horizontal recoil": "-16%",
+   "Spread": "-16%",
+   "ADS time": "-12%",
+   "Equip speed": "+9%"
+  },
+  "pros_en": [
+   "Moderate horizontal recoil reduction",
+   "Moderate spread reduction",
+   "Moderate ADS speed improvements",
+   "Moderate ADS stabilization handling"
+  ],
+  "cons_en": [
+   "Minor vertical recoil penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -644,6 +1109,30 @@
   "fits": [
    "T-21",
    "М4",
+   "M249 SAW",
+   "Galil",
+   "FAL"
+  ],
+  "stats_en": {
+   "Weight": "0.72 kg",
+   "Vertical recoil": "-12%",
+   "Horizontal recoil": "-7%",
+   "Spread": "-10%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduces sound profile",
+   "Moderate muzzle flash reduction",
+   "Moderate spread reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "T-21",
+   "M4",
    "M249 SAW",
    "Galil",
    "FAL"
@@ -681,6 +1170,33 @@
    "Galil",
    "GGX 18",
    "ПП-19 «Бизон»"
+  ],
+  "stats_en": {
+   "Weight": "0.09 kg",
+   "Vertical recoil": "+2%",
+   "Horizontal recoil": "-20%",
+   "Spread": "-5%",
+   "ADS time": "+4%"
+  },
+  "pros_en": [
+   "Moderate horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor vertical recoil penalty",
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "GGX 17",
+   "AMP-9",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "GGX 18",
+   "PP-19 Bizon"
   ]
  },
  {
@@ -701,6 +1217,19 @@
   "cons": [],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.09 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Minor flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -720,6 +1249,19 @@
   ],
   "cons": [],
   "fits": [
+   "BMR-308"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Strong flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "BMR-308"
   ]
  },
@@ -748,6 +1290,26 @@
   ],
   "fits": [
    "BMR-308"
+  ],
+  "stats_en": {
+   "Weight": "0.65 kg",
+   "Vertical recoil": "-5%",
+   "Horizontal recoil": "-4%",
+   "Spread": "-8%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "BMR-308"
   ]
  },
  {
@@ -772,6 +1334,24 @@
    "Незначительная горизонтальная отдача"
   ],
   "fits": [
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.09 kg",
+   "Vertical recoil": "-10%",
+   "Horizontal recoil": "+5%",
+   "Spread": "-10%",
+   "ADS time": "+2%"
+  },
+  "pros_en": [
+   "Moderate spread reduction",
+   "Moderate vertical recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty",
+   "Minor horizontal recoil punishment"
+  ],
+  "fits_en": [
    "TCX-SPR"
   ]
  },
@@ -809,6 +1389,38 @@
    "МК22",
    "АМР 50",
    "ПП-19 «Бизон»",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.13 kg",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Moderate ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
@@ -853,6 +1465,40 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.13 kg",
+   "ADS time": "-10%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -883,6 +1529,31 @@
    "СВ98",
    "FAL",
    "МК22",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.14 kg",
+   "Vertical recoil": "+1%",
+   "Horizontal recoil": "-17%",
+   "Spread": "-3%",
+   "ADS time": "+3%"
+  },
+  "pros_en": [
+   "Strong horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "Mosin Nagant",
+   "BMR-308",
+   "PKM",
+   "SV98",
+   "FAL",
+   "MK22",
    "Evo-3 Ultra",
    "TCX-SPR"
   ]
@@ -926,6 +1597,40 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.31 kg",
+   "ADS time": "+5%",
+   "Zoom": "2.0x"
+  },
+  "pros_en": [
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -951,6 +1656,24 @@
   ],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.22 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "-3%",
+   "Spread": "-4%",
+   "ADS time": "+4%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -985,6 +1708,33 @@
    "Galil",
    "FAL",
    "Evo-3 Ultra"
+  ],
+  "stats_en": {
+   "Weight": "0.15 kg",
+   "Vertical recoil": "-30%",
+   "Horizontal recoil": "-3%",
+   "Spread": "-9%",
+   "ADS time": "+15%",
+   "Equip speed": "+9%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Strong vertical sway reduction",
+   "Moderate ADS stabilization handling",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty",
+   "Minor horizontal sway penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "M4",
+   "M249 SAW",
+   "M500",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra"
   ]
  },
  {
@@ -1009,6 +1759,24 @@
    "Незначительное снижение скорости прицеливания"
   ],
   "fits": [
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.05 kg",
+   "Vertical recoil": "-8%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-10%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
    "TCX-SPR"
   ]
  },
@@ -1038,6 +1806,27 @@
    "МК22",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg"
+  },
+  "pros_en": [
+   "Minor flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "SKS",
+   "Mosin Nagant",
+   "BMR-308",
+   "SVD",
+   "PKM",
+   "SV98",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1052,6 +1841,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "Deagle"
+  ],
+  "stats_en": {
+   "Weight": "0.43 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "Deagle"
   ]
  },
@@ -1078,6 +1875,24 @@
   ],
   "fits": [
    "СКС"
+  ],
+  "stats_en": {
+   "Weight": "0.18 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "-10%",
+   "Spread": "-5%",
+   "ADS time": "+6%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS"
   ]
  },
  {
@@ -1108,6 +1923,29 @@
    "MP5",
    "GGX 18",
    "ПП-19 «Бизон»"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Vertical recoil": "-18%",
+   "Horizontal recoil": "-4%",
+   "Spread": "-5%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "GGX 17",
+   "AMP-9",
+   "PP-19 Vityaz",
+   "MP5",
+   "GGX 18",
+   "PP-19 Bizon"
   ]
  },
  {
@@ -1133,6 +1971,24 @@
    "MP5",
    "GGX 18",
    "ПП-19 «Бизон»"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "GGX 17",
+   "AMP-9",
+   "PP-19 Vityaz",
+   "MP5",
+   "GGX 18",
+   "PP-19 Bizon"
   ]
  },
  {
@@ -1155,6 +2011,21 @@
   ],
   "fits": [
    "Evo-3 Ultra"
+  ],
+  "stats_en": {
+   "Weight": "0.7 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "Evo-3 Ultra"
   ]
  },
  {
@@ -1169,6 +2040,15 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "BMR-308",
+   "FAL"
+  ],
+  "stats_en": {
+   "Weight": "0.76 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "BMR-308",
    "FAL"
   ]
@@ -1191,6 +2071,20 @@
   ],
   "cons": [],
   "fits": [
+   "FAL"
+  ],
+  "stats_en": {
+   "Weight": "0.2 kg",
+   "Spread": "-3%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Strong flash reduction",
+   "Minor spread reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "FAL"
   ]
  },
@@ -1219,6 +2113,26 @@
   ],
   "fits": [
    "МК22"
+  ],
+  "stats_en": {
+   "Weight": "0.34 kg",
+   "Vertical recoil": "-4%",
+   "Horizontal recoil": "-3%",
+   "Spread": "-10%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate spread reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "MK22"
   ]
  },
  {
@@ -1261,6 +2175,41 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "ADS time": "-15%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Moderate ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "Deagle",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1286,6 +2235,24 @@
    "МК22",
    "АМР 50",
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.66 kg",
+   "ADS time": "+20%",
+   "Zoom": "2.5x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Strong ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "SVD",
+   "SV98",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14"
   ]
  },
  {
@@ -1308,6 +2275,21 @@
   ],
   "fits": [
    "М500"
+  ],
+  "stats_en": {
+   "ADS time": "+2%"
+  },
+  "pros_en": [
+   "Tight pellet spread (higher pellet density)",
+   "Improved consistency at mid–long range",
+   "Stronger one-tap potential if you center the shot"
+  ],
+  "cons_en": [
+   "Less forgiving up close (easier to miss)",
+   "Requires more precise aim and tracking"
+  ],
+  "fits_en": [
+   "M500"
   ]
  },
  {
@@ -1322,6 +2304,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.71 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "Galil"
   ]
  },
@@ -1347,6 +2337,24 @@
    "Незначительное снижение скорости прицеливания"
   ],
   "fits": [
+   "Super-45"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-22%",
+   "Horizontal recoil": "-12%",
+   "Spread": "-2%",
+   "ADS time": "+4%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
    "Super-45"
   ]
  },
@@ -1381,6 +2389,32 @@
    "СВ98",
    "МК22",
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "0.75 kg",
+   "Vertical recoil": "-16%",
+   "Horizontal recoil": "-10%",
+   "Spread": "-12%",
+   "ADS time": "+15%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Moderate spread reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "Mosin Nagant",
+   "BMR-308",
+   "SVD",
+   "SV98",
+   "MK22",
+   "AMR 50"
   ]
  },
  {
@@ -1412,6 +2446,30 @@
    "СВД",
    "ПКМ",
    "СВ98"
+  ],
+  "stats_en": {
+   "Weight": "0.55 kg",
+   "Vertical recoil": "-18%",
+   "Horizontal recoil": "-10%",
+   "Spread": "-11%",
+   "ADS time": "+12%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Moderate spread reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS",
+   "Mosin Nagant",
+   "SVD",
+   "PKM",
+   "SV98"
   ]
  },
  {
@@ -1437,6 +2495,25 @@
   "fits": [
    "T-21",
    "М4",
+   "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.15 kg",
+   "Vertical recoil": "-1%",
+   "Horizontal recoil": "-22%",
+   "Spread": "-4%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Strong horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "T-21",
+   "M4",
    "Galil"
   ]
  },
@@ -1479,6 +2556,40 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.25 kg",
+   "ADS time": "-10%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1510,6 +2621,30 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.26 kg",
+   "Vertical recoil": "-12%",
+   "Horizontal recoil": "-10%",
+   "Spread": "-6%",
+   "ADS time": "+10%",
+   "Equip speed": "-2%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1530,6 +2665,19 @@
   ],
   "fits": [
    "М500"
+  ],
+  "stats_en": {
+   "ADS time": "+2%"
+  },
+  "pros_en": [
+   "Tight pellet spread (higher pellet density)",
+   "Better hit consistency on moving targets"
+  ],
+  "cons_en": [
+   "Less pellet density at mid–long range"
+  ],
+  "fits_en": [
+   "M500"
   ]
  },
  {
@@ -1571,6 +2719,40 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.41 kg",
+   "ADS time": "-15%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Moderate ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1589,6 +2771,18 @@
    "Умеренное снижение скорости прицеливания"
   ],
   "fits": [
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "1.1 kg",
+   "ADS time": "+15%",
+   "Zoom": "3.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
    "M14"
   ]
  },
@@ -1612,6 +2806,21 @@
   ],
   "fits": [
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.79 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Moderate recoil reduction",
+   "Moderate sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "M14"
   ]
  },
  {
@@ -1627,6 +2836,14 @@
   "cons": [],
   "fits": [
    "М1911"
+  ],
+  "stats_en": {
+   "Weight": "0.22 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "M1911"
   ]
  },
  {
@@ -1648,6 +2865,21 @@
    "Пониженная мобильность"
   ],
   "fits": [
+   "M249 SAW"
+  ],
+  "stats_en": {
+   "Weight": "0.7 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
    "M249 SAW"
   ]
  },
@@ -1674,6 +2906,24 @@
   ],
   "fits": [
    "М500"
+  ],
+  "stats_en": {
+   "Weight": "0.14 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "+2%",
+   "Spread": "-5%",
+   "ADS time": "+7%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor horizontal recoil penalty",
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "M500"
   ]
  },
  {
@@ -1712,6 +2962,37 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.08 kg",
+   "Vertical recoil": "-5%",
+   "Horizontal recoil": "-23%",
+   "Spread": "-20%",
+   "ADS time": "-14%",
+   "Equip speed": "+10%"
+  },
+  "pros_en": [
+   "Strong horizontal recoil reduction",
+   "Moderate spread reduction",
+   "Moderate ADS speed improvements",
+   "Moderate equip speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1729,6 +3010,17 @@
   ],
   "cons": [],
   "fits": [
+   "GGX 18"
+  ],
+  "stats_en": {
+   "ADS time": "+2%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Minor ADS speed increase"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "GGX 18"
   ]
  },
@@ -1749,6 +3041,18 @@
   "cons": [],
   "fits": [
    "MP5"
+  ],
+  "stats_en": {
+   "Weight": "0.35 kg",
+   "Vertical recoil": "-13%",
+   "Horizontal recoil": "-12%",
+   "ADS time": "-13%",
+   "Equip speed": "+10%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "MP5"
   ]
  },
  {
@@ -1763,6 +3067,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "MP5"
+  ],
+  "stats_en": {
+   "Weight": "0.51 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "MP5"
   ]
  },
@@ -1782,6 +3094,18 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "MP5"
+  ],
+  "stats_en": {
+   "Weight": "1.49 kg",
+   "Vertical recoil": "+20%",
+   "Horizontal recoil": "+18%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "MP5"
   ]
  },
@@ -1803,6 +3127,20 @@
   ],
   "cons": [],
   "fits": [
+   "MP5"
+  ],
+  "stats_en": {
+   "Weight": "0.19 kg",
+   "Spread": "-8%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Strong flash reduction",
+   "Minor spread reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "MP5"
   ]
  },
@@ -1844,6 +3182,39 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.48 kg",
+   "ADS time": "-15%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Moderate ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -1870,6 +3241,25 @@
   "fits": [
    "M249 SAW",
    "ПКМ"
+  ],
+  "stats_en": {
+   "Weight": "0.16 kg",
+   "Vertical recoil": "-26%",
+   "Horizontal recoil": "-10%",
+   "Spread": "-2%",
+   "ADS time": "+7%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "M249 SAW",
+   "PKM"
   ]
  },
  {
@@ -1897,6 +3287,26 @@
   ],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.8 kg",
+   "Vertical recoil": "-14%",
+   "Horizontal recoil": "-8%",
+   "Spread": "-12%",
+   "ADS time": "+12%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate spread reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -1916,6 +3326,18 @@
   "cons": [],
   "fits": [
    "РПГ-7"
+  ],
+  "stats_en": {
+   "Weight": "0.62 kg",
+   "ADS time": "+15%",
+   "Zoom": "2.8x"
+  },
+  "pros_en": [
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "RPG-7"
   ]
  },
  {
@@ -1938,6 +3360,21 @@
   ],
   "fits": [
    "ПКМ"
+  ],
+  "stats_en": {
+   "Weight": "0.7 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "PKM"
   ]
  },
  {
@@ -1957,6 +3394,18 @@
   "cons": [],
   "fits": [
    "ПП-19 «Витязь»"
+  ],
+  "stats_en": {
+   "Weight": "1.3 kg",
+   "Vertical recoil": "+20%",
+   "Horizontal recoil": "+18%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "PP-19 Vityaz"
   ]
  },
  {
@@ -1972,6 +3421,14 @@
   "cons": [],
   "fits": [
    "ПП-19 «Бизон»"
+  ],
+  "stats_en": {
+   "Weight": "1.24 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "PP-19 Bizon"
   ]
  },
  {
@@ -1992,6 +3449,19 @@
   "cons": [],
   "fits": [
    "ПП-19 «Витязь»"
+  ],
+  "stats_en": {
+   "Weight": "0.08 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "PP-19 Vityaz"
   ]
  },
  {
@@ -2019,6 +3489,26 @@
   ],
   "fits": [
    "ПП-19 «Витязь»"
+  ],
+  "stats_en": {
+   "Weight": "0.5 kg",
+   "Vertical recoil": "-3%",
+   "Horizontal recoil": "-3%",
+   "Spread": "-5%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "PP-19 Vityaz"
   ]
  },
  {
@@ -2043,6 +3533,23 @@
    "BMR-308",
    "МК22",
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "0.55 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "BMR-308",
+   "MK22",
+   "AMR 50"
   ]
  },
  {
@@ -2062,6 +3569,18 @@
   ],
   "fits": [
    "Винтовка Мосина"
+  ],
+  "stats_en": {
+   "Weight": "0.27 kg",
+   "ADS time": "+15%",
+   "Zoom": "3.5x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "Mosin Nagant"
   ]
  },
  {
@@ -2088,6 +3607,26 @@
    "Незначительное снижение скорости прицеливания"
   ],
   "fits": [
+   "MP5"
+  ],
+  "stats_en": {
+   "Weight": "0.38 kg",
+   "Vertical recoil": "-6%",
+   "Horizontal recoil": "-5%",
+   "Spread": "-10%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate spread reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
    "MP5"
   ]
  },
@@ -2117,6 +3656,29 @@
   "fits": [
    "T-21",
    "М4",
+   "M249 SAW",
+   "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.5 kg",
+   "Vertical recoil": "-12%",
+   "Horizontal recoil": "-8%",
+   "Spread": "-12%",
+   "ADS time": "+12%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate spread reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "T-21",
+   "M4",
    "M249 SAW",
    "Galil"
   ]
@@ -2153,6 +3715,38 @@
    "М500",
    "BMR-308",
    "ПП-19 «Витязь»",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "1.05 kg",
+   "Vertical recoil": "-15%",
+   "Horizontal recoil": "-8%",
+   "Spread": "-15%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Moderate spread reduction",
+   "Moderate ADS stabilization handling",
+   "Moderate vertical sway reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
    "MP5",
    "Galil",
    "FAL",
@@ -2199,6 +3793,40 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.11 kg",
+   "Vertical recoil": "-18%",
+   "Horizontal recoil": "-7%",
+   "Spread": "-16%",
+   "ADS time": "+2%",
+   "Equip speed": "-2%"
+  },
+  "pros_en": [
+   "Strong ADS stabilization handling",
+   "Strong vertical sway reduction",
+   "Moderate vertical recoil reduction",
+   "Moderate spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty",
+   "Minor equip speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2239,6 +3867,39 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-25%",
+   "Horizontal recoil": "-13%",
+   "Spread": "-19%",
+   "ADS time": "-10%",
+   "Equip speed": "+7%"
+  },
+  "pros_en": [
+   "Minor ADS speed increase",
+   "Moderate spread reduction",
+   "Good vertical control",
+   "Minor horizontal control"
+  ],
+  "cons_en": [
+   "Minor horizontal sway control penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2271,6 +3932,31 @@
    "MP5",
    "GGX 18",
    "ПП-19 «Бизон»"
+  ],
+  "stats_en": {
+   "Weight": "0.6 kg",
+   "Vertical recoil": "-10%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-9%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Reduces sound profile",
+   "Moderate muzzle flash",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "GGX 17",
+   "AMP-9",
+   "Super-45",
+   "PP-19 Vityaz",
+   "M1911",
+   "MP5",
+   "GGX 18",
+   "PP-19 Bizon"
   ]
  },
  {
@@ -2309,6 +3995,37 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-8%",
+   "Horizontal recoil": "-29%",
+   "Spread": "-24%",
+   "ADS time": "-13%",
+   "Equip speed": "+15%"
+  },
+  "pros_en": [
+   "Strong horizontal recoil reduction",
+   "Strong spread reduction",
+   "Moderate ADS speed improvements",
+   "Moderate equip speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2331,6 +4048,21 @@
   ],
   "fits": [
    "СКС"
+  ],
+  "stats_en": {
+   "Weight": "0.47 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Moderate recoil reduction",
+   "Moderate sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "SKS"
   ]
  },
  {
@@ -2358,6 +4090,26 @@
   ],
   "fits": [
    "Evo-3 Ultra"
+  ],
+  "stats_en": {
+   "Weight": "0.53 kg",
+   "Vertical recoil": "-5%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-10%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Moderate flash reduction",
+   "Moderate spread reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "Evo-3 Ultra"
   ]
  },
  {
@@ -2383,6 +4135,24 @@
   ],
   "fits": [
    "СКС"
+  ],
+  "stats_en": {
+   "Weight": "0.14 kg",
+   "Vertical recoil": "-20%",
+   "Horizontal recoil": "+3%",
+   "Spread": "-4%",
+   "ADS time": "+8%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor horizontal recoil penalty",
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "SKS"
   ]
  },
  {
@@ -2403,6 +4173,19 @@
   "cons": [],
   "fits": [
    "ПКМ"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate flash reduction",
+   "Minor ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "PKM"
   ]
  },
  {
@@ -2436,6 +4219,35 @@
    "Винтовка Scout Rifle TD",
    "МК22",
    "АМР 50",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.66 kg",
+   "ADS time": "+10%",
+   "Zoom": "4.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "M249 SAW",
+   "M500",
+   "BMR-308",
+   "SVD",
+   "PKM",
+   "SV98",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
@@ -2475,6 +4287,35 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.26 kg",
+   "ADS time": "+10%",
+   "Zoom": "3.0x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "M249 SAW",
+   "M500",
+   "BMR-308",
+   "SVD",
+   "PKM",
+   "SV98",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2501,6 +4342,26 @@
    "Умеренное снижение скорости прицеливания"
   ],
   "fits": [
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.38 kg",
+   "Vertical recoil": "-7%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-10%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate spread reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
    "TCX-SPR"
   ]
  },
@@ -2530,6 +4391,27 @@
    "СВД",
    "ПКМ",
    "СВ98"
+  ],
+  "stats_en": {
+   "Weight": "0.49 kg",
+   "Vertical recoil": "-12%",
+   "Horizontal recoil": "-18%",
+   "Spread": "-5%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Moderate horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "Mosin Nagant",
+   "SVD",
+   "PKM",
+   "SV98"
   ]
  },
  {
@@ -2557,6 +4439,26 @@
   ],
   "fits": [
    "Винтовка Scout Rifle TD"
+  ],
+  "stats_en": {
+   "Weight": "0.59 kg",
+   "Vertical recoil": "-4%",
+   "Horizontal recoil": "-4%",
+   "Spread": "-7%",
+   "ADS time": "+4%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Moderate flash reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "Scout Rifle TD"
   ]
  },
  {
@@ -2577,6 +4479,20 @@
   ],
   "cons": [],
   "fits": [
+   "Super-45"
+  ],
+  "stats_en": {
+   "Weight": "0.06 kg",
+   "Spread": "-1%",
+   "ADS time": "-2%"
+  },
+  "pros_en": [
+   "Moderate muzzle flash reduction",
+   "Minor ADS speed improvement",
+   "Minor spread reduction"
+  ],
+  "cons_en": [],
+  "fits_en": [
    "Super-45"
   ]
  },
@@ -2605,6 +4521,26 @@
   ],
   "fits": [
    "FAL"
+  ],
+  "stats_en": {
+   "Weight": "0.64 kg",
+   "Vertical recoil": "-4%",
+   "Horizontal recoil": "-4%",
+   "Spread": "-7%",
+   "ADS time": "+7%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Moderate flash reduction",
+   "Minor vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "FAL"
   ]
  },
  {
@@ -2627,6 +4563,21 @@
   ],
   "fits": [
    "СВ98"
+  ],
+  "stats_en": {
+   "Weight": "0.47 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "SV98"
   ]
  },
  {
@@ -2642,6 +4593,14 @@
   "cons": [],
   "fits": [
    "СВД"
+  ],
+  "stats_en": {
+   "Weight": "0.23 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "SVD"
   ]
  },
  {
@@ -2667,6 +4626,24 @@
   ],
   "fits": [
    "СВД"
+  ],
+  "stats_en": {
+   "Weight": "0.2 kg",
+   "Vertical recoil": "-18%",
+   "Horizontal recoil": "-2%",
+   "Spread": "-3%",
+   "ADS time": "+3%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "SVD"
   ]
  },
  {
@@ -2689,6 +4666,21 @@
   ],
   "fits": [
    "СВД"
+  ],
+  "stats_en": {
+   "Weight": "0.5 kg"
+  },
+  "pros_en": [
+   "Strong ADS speed increase",
+   "Strong spread reduction",
+   "Strong recoil reduction",
+   "Strong sway reduction"
+  ],
+  "cons_en": [
+   "Reduced mobility"
+  ],
+  "fits_en": [
+   "SVD"
   ]
  },
  {
@@ -2730,6 +4722,40 @@
    "FAL",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.13 kg",
+   "Vertical recoil": "-30%",
+   "Horizontal recoil": "-15%",
+   "Spread": "-17%",
+   "ADS time": "+10%",
+   "Equip speed": "-8%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Strong ADS stabilization handling",
+   "Strong vertical sway reduction",
+   "Moderate horizontal recoil reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty",
+   "Minor equip speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2757,6 +4783,26 @@
   ],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.7 kg",
+   "Vertical recoil": "-10%",
+   "Horizontal recoil": "-6%",
+   "Spread": "-9%",
+   "ADS time": "+10%"
+  },
+  "pros_en": [
+   "Reduced sound profile",
+   "Strong flash reduction",
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Moderate ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -2784,6 +4830,28 @@
    "BMR-308",
    "FAL",
    "МК22",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.12 kg",
+   "Vertical recoil": "-22%",
+   "Horizontal recoil": "-4%",
+   "Spread": "-4%",
+   "ADS time": "+6%"
+  },
+  "pros_en": [
+   "Strong vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "BMR-308",
+   "FAL",
+   "MK22",
    "Evo-3 Ultra",
    "TCX-SPR"
   ]
@@ -2814,6 +4882,27 @@
    "М4",
    "M249 SAW",
    "Galil"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Vertical recoil": "-18%",
+   "Horizontal recoil": "-2%",
+   "Spread": "-4%",
+   "ADS time": "+5%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "T-21",
+   "M4",
+   "M249 SAW",
+   "Galil"
   ]
  },
  {
@@ -2838,6 +4927,24 @@
    "Незначительное снижение скорости прицеливания"
   ],
   "fits": [
+   "M249 SAW"
+  ],
+  "stats_en": {
+   "Weight": "0.1 kg",
+   "Vertical recoil": "-14%",
+   "Horizontal recoil": "-2%",
+   "Spread": "-3%",
+   "ADS time": "+3%"
+  },
+  "pros_en": [
+   "Moderate vertical recoil reduction",
+   "Minor horizontal recoil reduction",
+   "Minor spread reduction"
+  ],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
    "M249 SAW"
   ]
  },
@@ -2877,6 +4984,40 @@
    "МК22",
    "АМР 50",
    "ПП-19 «Бизон»",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.2 kg",
+   "ADS time": "-3%",
+   "Zoom": "1.5x"
+  },
+  "pros_en": [],
+  "cons_en": [
+   "Minor ADS speed penalty"
+  ],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "M249 SAW",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
@@ -2920,6 +5061,39 @@
    "M14",
    "Evo-3 Ultra",
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.03 kg",
+   "ADS time": "-13%",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [
+   "Moderate ADS speed improvements"
+  ],
+  "cons_en": [],
+  "fits_en": [
+   "AK74",
+   "T-21",
+   "M4",
+   "SKS",
+   "AMP-9",
+   "Super-45",
+   "M500",
+   "BMR-308",
+   "PP-19 Vityaz",
+   "SVD",
+   "PKM",
+   "SV98",
+   "MP5",
+   "Galil",
+   "FAL",
+   "Scout Rifle TD",
+   "MK22",
+   "AMR 50",
+   "PP-19 Bizon",
+   "M14",
+   "Evo-3 Ultra",
+   "TCX-SPR"
   ]
  },
  {
@@ -2933,7 +5107,13 @@
   },
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {
+   "Zoom": "4.0x"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "sght_033",
@@ -2947,7 +5127,14 @@
   },
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {
+   "Weight": "0.06 kg",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "sght_037",
@@ -2961,7 +5148,14 @@
   },
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {
+   "Weight": "0.13 kg",
+   "Zoom": "1.2x"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "ak74mmagazine",
@@ -2976,6 +5170,14 @@
   "cons": [],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.55 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -2995,6 +5197,18 @@
   "cons": [],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "0.93 kg",
+   "Vertical recoil": "+19%",
+   "Horizontal recoil": "+21%",
+   "ADS time": "+19%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -3014,6 +5228,18 @@
   "cons": [],
   "fits": [
    "АК-74"
+  ],
+  "stats_en": {
+   "Weight": "2.08 kg",
+   "Vertical recoil": "+22%",
+   "Horizontal recoil": "+24%",
+   "ADS time": "+26%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AK74"
   ]
  },
  {
@@ -3033,6 +5259,18 @@
   "cons": [],
   "fits": [
    "AMP-9"
+  ],
+  "stats_en": {
+   "Weight": "0.25 kg",
+   "Vertical recoil": "-17%",
+   "Horizontal recoil": "-17%",
+   "ADS time": "-14%",
+   "Equip speed": "+20%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AMP-9"
   ]
  },
  {
@@ -3045,6 +5283,12 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "AMP-9"
+  ],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "AMP-9"
   ]
  },
@@ -3065,6 +5309,18 @@
   "cons": [],
   "fits": [
    "AMP-9"
+  ],
+  "stats_en": {
+   "Weight": "0.48 kg",
+   "Vertical recoil": "+12%",
+   "Horizontal recoil": "+14%",
+   "ADS time": "+11%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AMP-9"
   ]
  },
  {
@@ -3082,6 +5338,16 @@
   "cons": [],
   "fits": [
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "2.2 kg",
+   "ADS time": "+6%",
+   "Equip speed": "-10%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AMR 50"
   ]
  },
  {
@@ -3097,6 +5363,14 @@
   "cons": [],
   "fits": [
    "АМР 50"
+  ],
+  "stats_en": {
+   "Weight": "1.27 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AMR 50"
   ]
  },
  {
@@ -3111,6 +5385,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "Evo-3 Ultra"
+  ],
+  "stats_en": {
+   "Weight": "1.65 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "Evo-3 Ultra"
   ]
  },
@@ -3130,6 +5412,19 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "BMR-308",
+   "FAL"
+  ],
+  "stats_en": {
+   "Weight": "0.53 kg",
+   "Vertical recoil": "-16%",
+   "Horizontal recoil": "-15%",
+   "ADS time": "-15%",
+   "Equip speed": "+24%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "BMR-308",
    "FAL"
   ]
@@ -3152,6 +5447,19 @@
   "fits": [
    "BMR-308",
    "FAL"
+  ],
+  "stats_en": {
+   "Weight": "1.09 kg",
+   "Vertical recoil": "+22%",
+   "Horizontal recoil": "+24%",
+   "ADS time": "+26%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "BMR-308",
+   "FAL"
   ]
  },
  {
@@ -3171,6 +5479,18 @@
   "cons": [],
   "fits": [
    "Galil"
+  ],
+  "stats_en": {
+   "Weight": "1.16 kg",
+   "Vertical recoil": "+19%",
+   "Horizontal recoil": "+21%",
+   "ADS time": "+19%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "Galil"
   ]
  },
  {
@@ -3185,6 +5505,15 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "GGX 17",
+   "GGX 18"
+  ],
+  "stats_en": {
+   "Weight": "0.28 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "GGX 17",
    "GGX 18"
   ]
@@ -3207,6 +5536,19 @@
   "fits": [
    "GGX 17",
    "GGX 18"
+  ],
+  "stats_en": {
+   "Weight": "0.52 kg",
+   "Vertical recoil": "+2%",
+   "Horizontal recoil": "+4%",
+   "ADS time": "+6%",
+   "Equip speed": "-2%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "GGX 17",
+   "GGX 18"
   ]
  },
  {
@@ -3227,6 +5569,19 @@
   "fits": [
    "GGX 17",
    "GGX 18"
+  ],
+  "stats_en": {
+   "Weight": "1.46 kg",
+   "Vertical recoil": "+4%",
+   "Horizontal recoil": "+7%",
+   "ADS time": "+10%",
+   "Equip speed": "-5%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "GGX 17",
+   "GGX 18"
   ]
  },
  {
@@ -3241,6 +5596,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.4 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "M14"
   ]
  },
@@ -3261,6 +5624,18 @@
   "cons": [],
   "fits": [
    "M14"
+  ],
+  "stats_en": {
+   "Weight": "0.73 kg",
+   "Vertical recoil": "+7%",
+   "Horizontal recoil": "+5%",
+   "ADS time": "+8%",
+   "Equip speed": "-5%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "M14"
   ]
  },
  {
@@ -3279,6 +5654,18 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "M14"
+  ],
+  "stats_en": {
+   "Weight": "1.04 kg",
+   "Vertical recoil": "+22%",
+   "Horizontal recoil": "+24%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "M14"
   ]
  },
@@ -3299,6 +5686,18 @@
   "cons": [],
   "fits": [
    "М1911"
+  ],
+  "stats_en": {
+   "Weight": "0.38 kg",
+   "Vertical recoil": "+2%",
+   "Horizontal recoil": "+4%",
+   "ADS time": "+6%",
+   "Equip speed": "-2%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "M1911"
   ]
  },
  {
@@ -3313,6 +5712,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "M249 SAW"
+  ],
+  "stats_en": {
+   "Weight": "1.62 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "M249 SAW"
   ]
  },
@@ -3333,6 +5740,18 @@
   "cons": [],
   "fits": [
    "M249 SAW"
+  ],
+  "stats_en": {
+   "Weight": "3.14 kg",
+   "Vertical recoil": "+17%",
+   "Horizontal recoil": "+17%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "M249 SAW"
   ]
  },
  {
@@ -3350,6 +5769,16 @@
   "cons": [],
   "fits": [
    "МК22"
+  ],
+  "stats_en": {
+   "Weight": "0.45 kg",
+   "ADS time": "+6%",
+   "Equip speed": "-10%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "MK22"
   ]
  },
  {
@@ -3365,6 +5794,14 @@
   "cons": [],
   "fits": [
    "МК22"
+  ],
+  "stats_en": {
+   "Weight": "0.38 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "MK22"
   ]
  },
  {
@@ -3381,6 +5818,15 @@
   "cons": [],
   "fits": [
    "ПКМ"
+  ],
+  "stats_en": {
+   "Weight": "3.9 kg",
+   "ADS time": "+10%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "PKM"
   ]
  },
  {
@@ -3400,6 +5846,18 @@
   "cons": [],
   "fits": [
    "ПП-19 «Витязь»"
+  ],
+  "stats_en": {
+   "Weight": "0.2 kg",
+   "Vertical recoil": "-17%",
+   "Horizontal recoil": "-17%",
+   "ADS time": "-14%",
+   "Equip speed": "+20%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "PP-19 Vityaz"
   ]
  },
  {
@@ -3413,6 +5871,12 @@
   "cons": [],
   "fits": [
    "ПП-19 «Витязь»"
+  ],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "PP-19 Vityaz"
   ]
  },
  {
@@ -3437,6 +5901,23 @@
    "М4",
    "M249 SAW",
    "Bushmaster M17S"
+  ],
+  "stats_en": {
+   "Weight": "0.31 kg",
+   "Vertical recoil": "-16%",
+   "Horizontal recoil": "-15%",
+   "ADS time": "-15%",
+   "Equip speed": "+16%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "KH-2002",
+   "A-91",
+   "T-21",
+   "M4",
+   "M249 SAW",
+   "Bushmaster M17S"
   ]
  },
  {
@@ -3448,7 +5929,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "tar21mag",
@@ -3459,7 +5944,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "m4magazine",
@@ -3470,7 +5959,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "stanagmagazine",
@@ -3489,6 +5982,20 @@
    "A-91",
    "T-21",
    "М4",
+   "M249 SAW",
+   "Bushmaster M17S"
+  ],
+  "stats_en": {
+   "Weight": "0.53 kg",
+   "Equip speed": "-2%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "KH-2002",
+   "A-91",
+   "T-21",
+   "M4",
    "M249 SAW",
    "Bushmaster M17S"
   ]
@@ -3515,6 +6022,23 @@
    "М4",
    "M249 SAW",
    "Bushmaster M17S"
+  ],
+  "stats_en": {
+   "Weight": "1.01 kg",
+   "Vertical recoil": "+19%",
+   "Horizontal recoil": "+21%",
+   "ADS time": "+19%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "KH-2002",
+   "A-91",
+   "T-21",
+   "M4",
+   "M249 SAW",
+   "Bushmaster M17S"
   ]
  },
  {
@@ -3534,6 +6058,18 @@
   "cons": [],
   "fits": [
    "Super-45"
+  ],
+  "stats_en": {
+   "Weight": "0.23 kg",
+   "Vertical recoil": "-17%",
+   "Horizontal recoil": "-17%",
+   "ADS time": "-17%",
+   "Equip speed": "+21%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "Super-45"
   ]
  },
  {
@@ -3548,6 +6084,14 @@
   "pros": [],
   "cons": [],
   "fits": [
+   "Super-45"
+  ],
+  "stats_en": {
+   "Weight": "0.89 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
    "Super-45"
   ]
  },
@@ -3568,6 +6112,18 @@
   "cons": [],
   "fits": [
    "Super-45"
+  ],
+  "stats_en": {
+   "Weight": "1.59 kg",
+   "Vertical recoil": "+20%",
+   "Horizontal recoil": "+18%",
+   "ADS time": "+20%",
+   "Equip speed": "-7%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "Super-45"
   ]
  },
  {
@@ -3583,6 +6139,14 @@
   "cons": [],
   "fits": [
    "СВ98"
+  ],
+  "stats_en": {
+   "Weight": "0.34 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "SV98"
   ]
  },
  {
@@ -3600,6 +6164,16 @@
   "cons": [],
   "fits": [
    "СВД"
+  ],
+  "stats_en": {
+   "Weight": "0.34 kg",
+   "ADS time": "+6%",
+   "Equip speed": "-10%"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "SVD"
   ]
  },
  {
@@ -3615,6 +6189,14 @@
   "cons": [],
   "fits": [
    "TCX-SPR"
+  ],
+  "stats_en": {
+   "Weight": "0.84 kg"
+  },
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "TCX-SPR"
   ]
  },
  {
@@ -3626,7 +6208,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "m4extendedmagazine",
@@ -3637,7 +6223,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "mp9extendedmagazine",
@@ -3650,6 +6240,12 @@
   "cons": [],
   "fits": [
    "AMP-9"
+  ],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "AMP-9"
   ]
  },
  {
@@ -3661,7 +6257,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "kh2002mag",
@@ -3672,7 +6272,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "kh2002extendedmagazine",
@@ -3683,7 +6287,11 @@
   "stats": {},
   "pros": [],
   "cons": [],
-  "fits": []
+  "fits": [],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": []
  },
  {
   "id": "sv98extendedmagazine",
@@ -3696,6 +6304,12 @@
   "cons": [],
   "fits": [
    "СВ98"
+  ],
+  "stats_en": {},
+  "pros_en": [],
+  "cons_en": [],
+  "fits_en": [
+   "SV98"
   ]
  }
 ]

@@ -30,7 +30,9 @@ from datetime import datetime
 
 from PIL import Image, ImageGrab
 
+import i18n
 from feedreader import KILLFEED, FeedReader, format_kill
+from i18n import t
 
 FIELDS = ["time", "clock", "killer", "victim", "weapon", "distance_m", "mine", "readings"]
 BASE_W, BASE_H = 3440, 1440  # разрешение, под которое заданы координаты KILLFEED
@@ -141,18 +143,17 @@ def grab_killfeed_gdi(hwnd):
 def summary(kills, nick):
     mine_k = [k for k in kills if k["mine"] == "убил"]
     mine_d = [k for k in kills if k["mine"] == "умер"]
-    print(f"\n=== Итоги сессии ({nick}) ===")
-    print(f"Убийств в ленте всего: {len(kills)}")
-    print(f"Ты убил: {len(mine_k)}, умер: {len(mine_d)}"
-          + (f", K/D {len(mine_k) / len(mine_d):.2f}" if mine_d else ""))
+    print("\n" + t("sum_title", nick=nick))
+    print(t("sum_total", n=len(kills)))
+    print(t("sum_kd", k=len(mine_k), d=len(mine_d)) + (f", K/D {len(mine_k) / len(mine_d):.2f}" if mine_d else ""))
     if mine_k:
-        print("Твоё оружие:", ", ".join(f"{w} — {n}" for w, n in Counter(k["weapon"] for k in mine_k).most_common()))
+        print(t("sum_weapons"), ", ".join(f"{w} — {n}" for w, n in Counter(k["weapon"] for k in mine_k).most_common()))
         dists = [k["distance_m"] for k in mine_k if k["distance_m"] != ""]
         if dists:
-            print(f"Самое дальнее убийство: {max(dists)} м")
+            print(t("sum_longest", m=max(dists)))
     if mine_d:
-        print("Тебя убивали из:", ", ".join(f"{w} — {n}" for w, n in Counter(k["weapon"] for k in mine_d).most_common()))
-        print("Чаще всех тебя убивал:", Counter(k["killer"] for k in mine_d).most_common(1)[0][0])
+        print(t("sum_killed_by"), ", ".join(f"{w} — {n}" for w, n in Counter(k["weapon"] for k in mine_d).most_common()))
+        print(t("sum_nemesis"), Counter(k["killer"] for k in mine_d).most_common(1)[0][0])
 
 
 class Session:
@@ -171,7 +172,7 @@ class Session:
         self.writer.writeheader()
         self.out.flush()
         self.kills = []
-        print(f"Пишу в {self.stem}.csv. Ctrl+C — остановить и показать итоги.")
+        print(t("writing", path=self.stem))
 
     def note(self, msg):
         line = f"{datetime.now():%H:%M:%S}  {msg}"
@@ -191,7 +192,7 @@ class Session:
             self.writer.writerow(kill)
             self.out.flush()
             if kill["mine"]:
-                print(f">>> {'УБИЛ' if kill['mine'] == 'убил' else 'УМЕР'}  " + format_kill(kill))
+                print(f">>> {t('kill') if kill['mine'] == 'убил' else t('death')}  " + format_kill(kill))
             elif self.print_all:
                 print("    " + format_kill(kill))
 
@@ -200,7 +201,7 @@ class Session:
         сырые строки сразу пишем в файл, чтобы ничего не потерять при вылете."""
         if not hasattr(self, "journal_frames"):
             self.journal_frames = []
-            self.note("Журнал урона открыт — читаю.")
+            self.note(t("journal_open"))
         self.journal_frames.append(lines)
         with open(self.stem + "_journal_raw.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps(lines, ensure_ascii=False) + "\n")
@@ -213,8 +214,10 @@ class Session:
         def usd(key):
             v = result.get(key)
             return "?" if v is None else ("−" if v < 0 else "") + f"${abs(v):,}".replace(",", " ")
-        self.note(f"Итоги матча: {result.get('result', '?')}, прибыль {usd('profit')}, "
-                  f"заработано {usd('earned')}, потрачено {usd('spent')}")
+        res = result.get("result", "?")
+        if i18n.LANG == "en":
+            res = {"победа": "victory", "поражение": "defeat"}.get(res, res)
+        self.note(t("match", r=res, p=usd("profit"), e=usd("earned"), s=usd("spent")))
 
     def close(self, reader):
         if reader:

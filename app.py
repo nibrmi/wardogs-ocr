@@ -8,19 +8,15 @@ import tkinter as tk
 from dataclasses import asdict, fields
 from tkinter import messagebox, ttk
 
+import i18n
+from i18n import t
 from paths import user_dir
 
 APP_NAME = "WARDOGS OCR"
 SETTINGS_FILE = user_dir("settings.json")
 
-TOGGLES = [
-    ("tips", "Подсказки с цифрами обвесов (магазин, инвентарь)"),
-    ("builds", "Итог сборки оружия (инвентарь, обыск; веса — клавиша F)"),
-    ("killfeed", "Трекер убийств по ленте"),
-    ("journal", "Журнал урона на экране смерти (кнопка B)"),
-    ("endscreen", "Итоги матча (победа/поражение, деньги)"),
-    ("shots", "Сохранять снимки ленты для разбора (~30 МБ за 20 минут)"),
-]
+TOGGLES = ["tips", "builds", "killfeed", "journal", "endscreen", "shots"]  # подписи — в i18n.py
+LANGS = {"ru": "Русский", "en": "English"}
 
 
 def load_settings():
@@ -52,10 +48,7 @@ def check_ocr():
         make_engine("ru")
         return None
     except Exception as e:
-        return ("В Windows не найдено распознавание текста для русского языка.\n\n"
-                "Как поставить: Параметры → Время и язык → Язык и регион → Добавить язык → Русский "
-                "(достаточно отметить «Распознавание текста»/базовые компоненты), затем перезапустить программу.\n\n"
-                f"Подробности: {e}")
+        return t("no_ocr", e=e)
 
 
 class LogWriter:
@@ -88,46 +81,57 @@ class App:
 
         top = ttk.Frame(root)
         top.pack(fill="x", **pad)
-        ttk.Label(top, text="Твой ник в игре:").pack(side="left")
+        ttk.Label(top, text=t("nick")).pack(side="left")
         self.nick = tk.StringVar(value=self.settings.nick)
-        ttk.Entry(top, textvariable=self.nick, width=28).pack(side="left", padx=8)
+        ttk.Entry(top, textvariable=self.nick, width=24).pack(side="left", padx=8)
+        self.lang = tk.StringVar(value=LANGS[i18n.LANG])
+        lang_box = ttk.Combobox(top, textvariable=self.lang, values=list(LANGS.values()), state="readonly", width=9)
+        lang_box.pack(side="right")
+        lang_box.bind("<<ComboboxSelected>>", lambda _: self._lang_changed())
+        ttk.Label(top, text=t("language")).pack(side="right", padx=6)
 
-        box = ttk.LabelFrame(root, text="Что делать")
+        box = ttk.LabelFrame(root, text=t("what"))
         box.pack(fill="x", **pad)
         self.vars = {}
-        for key, label in TOGGLES:
+        for key in TOGGLES:
             v = tk.BooleanVar(value=getattr(self.settings, key))
-            ttk.Checkbutton(box, text=label, variable=v).pack(anchor="w", padx=8, pady=1)
+            ttk.Checkbutton(box, text=t(key), variable=v).pack(anchor="w", padx=8, pady=1)
             self.vars[key] = v
 
-        load = ttk.LabelFrame(root, text="Нагрузка")
+        load = ttk.LabelFrame(root, text=t("load"))
         load.pack(fill="x", **pad)
         self.tick = tk.DoubleVar(value=self.settings.tick)
         self.tick_label = ttk.Label(load)
         self.tick_label.pack(anchor="w", padx=8)
         ttk.Scale(load, from_=0.2, to=2.0, variable=self.tick, command=lambda _: self._tick_text()).pack(fill="x", padx=8)
-        ttk.Label(load, text="Реже — меньше нагрузка на процессор, но подсказки появляются с задержкой "
-                             "и короткие строки ленты могут пропасть.", wraplength=520, foreground="#666").pack(anchor="w", padx=8, pady=(0, 6))
+        ttk.Label(load, text=t("tick_hint"), wraplength=520, foreground="#666").pack(anchor="w", padx=8, pady=(0, 6))
         self._tick_text()
 
         btns = ttk.Frame(root)
         btns.pack(fill="x", **pad)
-        self.start_btn = ttk.Button(btns, text="▶  Старт", command=self.toggle)
+        self.start_btn = ttk.Button(btns, text=t("start"), command=self.toggle)
         self.start_btn.pack(side="left")
-        ttk.Button(btns, text="Статистика", command=self.open_stats).pack(side="left", padx=8)
-        ttk.Button(btns, text="Папка с данными", command=lambda: os.startfile(user_dir())).pack(side="left")
-        self.status = ttk.Label(btns, text="Остановлено")
+        ttk.Button(btns, text=t("stats"), command=self.open_stats).pack(side="left", padx=8)
+        ttk.Button(btns, text=t("data_folder"), command=lambda: os.startfile(user_dir())).pack(side="left")
+        self.status = ttk.Label(btns, text=t("stopped"))
         self.status.pack(side="right")
 
         self.log = tk.Text(root, height=12, state="disabled", wrap="word", font=("Consolas", 9))
         self.log.pack(fill="both", expand=True, **pad)
         sys.stdout = sys.stderr = LogWriter(self.log)
-        print(f"Данные сохраняются в {user_dir()}")
-        print("Цифры обвесов — wardogs.zone (с разрешения автора). Код: github.com/nibrmi/wardogs-ocr")
+        print(t("saved_to", path=user_dir()))
+        print(t("credits"))
         root.protocol("WM_DELETE_WINDOW", self.close)
 
+    def _lang_changed(self):
+        code = next(c for c, name in LANGS.items() if name == self.lang.get())
+        if code != i18n.LANG:
+            self.settings.ui_lang = code
+            save_settings(self._collect())
+            messagebox.showinfo(APP_NAME, i18n.TEXTS["restart_lang"][1 if code == "en" else 0])
+
     def _tick_text(self):
-        self.tick_label.configure(text=f"Проверять экран каждые {self.tick.get():.1f} с")
+        self.tick_label.configure(text=t("tick", s=self.tick.get()))
 
     def _collect(self):
         s = self.settings
@@ -141,23 +145,23 @@ class App:
 
     def toggle(self):
         if self.runner:
-            self.status.configure(text="Останавливаю…")
+            self.status.configure(text=t("stopping"))
             self.root.update_idletasks()
             self.runner.stop()
             self.runner = None
-            self.start_btn.configure(text="▶  Старт")
-            self.status.configure(text="Остановлено")
+            self.start_btn.configure(text=t("start"))
+            self.status.configure(text=t("stopped"))
             return
         s = self._collect()
         if not s.nick:
-            messagebox.showwarning(APP_NAME, "Впиши свой ник в игре — по нему трекер узнаёт твои убийства и смерти.")
+            messagebox.showwarning(APP_NAME, t("need_nick"))
             return
         from live import lower_priority
         from wardogs import Runner
         lower_priority()
         self.runner = Runner(self.root, s)
-        self.start_btn.configure(text="■  Стоп")
-        self.status.configure(text="Работает")
+        self.start_btn.configure(text=t("stop"))
+        self.status.configure(text=t("running"))
 
     def open_stats(self):
         import stats
@@ -200,6 +204,7 @@ def main():
     if "--selftest" in sys.argv:
         selftest()
         return
+    i18n.set_lang(load_settings().ui_lang or i18n.default_lang())
     root = tk.Tk()
     problem = check_ocr()
     if problem:

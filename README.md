@@ -37,6 +37,18 @@ python -m venv .venv
 
 Собрать exe: `powershell -ExecutionPolicy Bypass -File build.ps1` (результат — `dist\WARDOGS-OCR.zip`).
 
+## Языки / Languages
+
+- **Интерфейс программы** — русский или английский (выбор в окне программы; по умолчанию — по языку Windows).
+  *The program UI is available in Russian and English (selector in the main window).*
+- **Язык игры** выбирать не нужно: распознавание понимает русскую и английскую версию игры одновременно.
+  Названия и цифры обвесов есть на обоих языках.
+  *No need to choose the game language — both Russian and English game text is recognised.*
+- ⚠️ Английская версия игры пока проверена только частично: подсказки обвесов — по английским данным wardogs.zone,
+  названия вкладок, журнала урона и экрана итогов на английском — предположение, ждут проверки на записи.
+  *English game support is partially verified; screenshots of the English UI are welcome.*
+- Для работы нужен **русский OCR Windows** даже для английской игры — он читает и кириллицу, и латиницу.
+
 ## Нагрузка
 
 Главный рычаг — «Проверять экран каждые N с» в окне программы. Распознавание текста — это основная работа процессора;

@@ -68,23 +68,35 @@ def between(tokens, start, stop):
     return tokens[i:j]
 
 
-def parse_detail(html):
+# Подписи разделов на странице предмета — на русской (/ru/database/…) и английской (/database/…) версии сайта
+LABELS = {
+    "ru": {"db": "База данных", "cost": "Стоимость", "spec": "Спецификация", "desc": "Описание", "fits": "Подходит",
+           "related": "Похожее", "ref": "Справка", "pros": "Плюсы:", "cons": "Минусы:"},
+    "en": {"db": "Database", "cost": "Cost", "spec": "Specification", "desc": "Description", "fits": "Fits",
+           "related": "Related", "ref": "Reference", "pros": "Pros:", "cons": "Cons:"},
+}
+VALUE_EN_RE = re.compile(r"^[+\-−]?\d[\d\s,.]*\s*(%|kg|x|m/s|rpm|°)?$")
+
+
+def parse_detail(html, lang="ru"):
+    L = LABELS[lang]
+    value_re = VALUE_RE if lang == "ru" else VALUE_EN_RE
     tokens = text_tokens(html)
     item = {}
-    price = between(tokens, "База данных", {"Стоимость"})
+    price = between(tokens, L["db"], {L["cost"]})
     item["price"] = next((t for t in reversed(price) if t.startswith("$")), "")
 
     # «Спецификация»: пары «название | значение»; строки без значения (вроде «Управляемость») — заголовки групп
-    spec = between(tokens, "Спецификация", {"Описание", "Подходит", "Похожее"})
+    spec = between(tokens, L["spec"], {L["desc"], L["fits"], L["related"]})
     stats = {}
     for label, value in zip(spec, spec[1:]):
-        if not VALUE_RE.match(label) and VALUE_RE.match(value):
+        if not value_re.match(label) and value_re.match(value):
             stats[label] = value.replace("−", "-")
     item["stats"] = stats
-    item["pros"] = between(tokens, "Плюсы:", {"Минусы:", "Подходит", "Похожее", "Справка"})
-    item["cons"] = between(tokens, "Минусы:", {"Подходит", "Похожее", "Справка"})
+    item["pros"] = between(tokens, L["pros"], {L["cons"], L["fits"], L["related"], L["ref"]})
+    item["cons"] = between(tokens, L["cons"], {L["fits"], L["related"], L["ref"]})
 
-    fits = between(tokens, "Подходит", {"Похожее", "Справка"})
+    fits = between(tokens, L["fits"], {L["related"], L["ref"]})
     item["fits"] = fits[1::2] if fits and fits[0].isdigit() else []  # число, потом пары «оружие | класс»
     return item
 
@@ -119,8 +131,12 @@ def main():
         is_magazine = spec[:2] == ["Класс", "Боеприпасы"] and "mag" in slug
         if not (is_module or is_magazine):
             continue  # оружие, патроны, техника и т.п.
-        name_en = page_title_name(fetch(f"/database/{slug}"))
-        items.append({"id": slug, "name_ru": page_title_name(html_ru), "name_en": name_en, "class": "", **parse_detail(html_ru)})
+        html_en = fetch(f"/database/{slug}")
+        en = parse_detail(html_en, "en")
+        items.append({"id": slug, "name_ru": page_title_name(html_ru), "name_en": page_title_name(html_en), "class": "",
+                      **parse_detail(html_ru),
+                      # то же на английском — для английской версии игры и английского интерфейса программы
+                      "stats_en": en["stats"], "pros_en": en["pros"], "cons_en": en["cons"], "fits_en": en["fits"]})
         if n % 20 == 0:
             print(f"  {n}/{len(candidates)}, обвесов: {len(items)}")
 

@@ -22,6 +22,8 @@ import tkinter as tk
 from PIL import Image, ImageGrab
 
 from live import WindowGrabber, client_rect_on_screen, find_game_window, lower_priority, user32
+import i18n
+from i18n import t
 from layout import to_base
 from shoptip import ShopTip
 
@@ -78,21 +80,21 @@ class Overlay:
             font = ("Segoe UI", max(9, round(11 * k)))
             bold = ("Segoe UI", max(9, round(11 * k)), "bold")
             if item:
-                tk.Label(self.frame, text=item["name_ru"], font=bold, fg=FG, bg=BG, anchor="w").pack(fill="x")
+                tk.Label(self.frame, text=i18n.item_name(item), font=bold, fg=FG, bg=BG, anchor="w").pack(fill="x")
                 stats = item["stats"]
                 if len(stats) <= 1:
-                    tk.Label(self.frame, text="цифр нет — только вес", font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x")
+                    tk.Label(self.frame, text=t("only_weight"), font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x")
                 for stat, value in stats.items():
                     row = tk.Frame(self.frame, bg=BG)
                     row.pack(fill="x")
-                    tk.Label(row, text=stat, font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(side="left")
-                    tk.Label(row, text=value, font=bold, fg=colour(stat, value), bg=BG, anchor="e").pack(side="right", padx=(16, 0))
+                    tk.Label(row, text=i18n.stat(stat), font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(side="left")
+                    tk.Label(row, text=i18n.value(value), font=bold, fg=colour(stat, value), bg=BG, anchor="e").pack(side="right", padx=(16, 0))
                 if item.get("price"):
-                    tk.Label(self.frame, text=f"Цена {item['price']}", font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x", pady=(4, 0))
-                tk.Label(self.frame, text="данные: wardogs.zone", font=("Segoe UI", max(8, round(8 * k))),
+                    tk.Label(self.frame, text=t("price", p=item["price"]), font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x", pady=(4, 0))
+                tk.Label(self.frame, text=t("data_src"), font=("Segoe UI", max(8, round(8 * k))),
                          fg="#7d838b", bg=BG, anchor="w").pack(fill="x")
             else:
-                tk.Label(self.frame, text=f"Нет в таблице:\n{result['title']}", font=font, fg=NEUTRAL, bg=BG, justify="left").pack()
+                tk.Label(self.frame, text=t("not_in_table", t=result["title"]), font=font, fg=NEUTRAL, bg=BG, justify="left").pack()
             self.shown_key = key
         self.root.update_idletasks()
         w, h = self.root.winfo_reqwidth(), self.root.winfo_reqheight()
@@ -132,7 +134,6 @@ class BuildPanels:
         return self.windows[i]
 
     def show(self, builds, wx, wy, k):
-        from builds import SLOT_NAMES
         for i, b in enumerate(builds):
             slot = self._window(i)
             win, frame, shown = slot
@@ -142,21 +143,22 @@ class BuildPanels:
                     w.destroy()
                 font = ("Segoe UI", max(9, round(10 * k)))
                 bold = ("Segoe UI", max(9, round(11 * k)), "bold")
-                tk.Label(frame, text=f"Сборка {b['weapon']} — итог", font=bold, fg=FG, bg=BG, anchor="w").pack(fill="x")
+                tk.Label(frame, text=t("build_title", w=b["weapon"]), font=bold, fg=FG, bg=BG, anchor="w").pack(fill="x")
                 if not b["total"]:
-                    tk.Label(frame, text="модули не опознаны", font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x")
+                    tk.Label(frame, text=t("not_identified"), font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(fill="x")
                 for stat, v in sorted(b["total"].items()):
                     value = f"{v:+d}%"
                     row = tk.Frame(frame, bg=BG)
                     row.pack(fill="x")
-                    tk.Label(row, text=stat, font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(side="left")
+                    tk.Label(row, text=i18n.stat(stat), font=font, fg=NEUTRAL, bg=BG, anchor="w").pack(side="left")
                     tk.Label(row, text=value, font=bold, fg=colour(stat, value), bg=BG).pack(side="right", padx=(16, 0))
                 for s, v in b["slots"].items():
                     c = v["candidates"]
-                    name = c[0]["name_ru"] if len(c) == 1 else (" / ".join(x["name_ru"] for x in c[:2]) + " ?") if c else "нет в таблице"
-                    tk.Label(frame, text=f"{SLOT_NAMES[s]}: {name}", font=("Segoe UI", max(8, round(9 * k))),
+                    name = (i18n.item_name(c[0]) if len(c) == 1 else
+                            (" / ".join(i18n.item_name(x) for x in c[:2]) + " ?") if c else t("not_found"))
+                    tk.Label(frame, text=f"{t('slot_' + s)}: {name}", font=("Segoe UI", max(8, round(9 * k))),
                              fg=NEUTRAL, bg=BG, anchor="w", wraplength=round(420 * k), justify="left").pack(fill="x")
-                tk.Label(frame, text="≈ эффекты перемножены; цифры — wardogs.zone", font=("Segoe UI", max(8, round(8 * k))),
+                tk.Label(frame, text=t("build_note"), font=("Segoe UI", max(8, round(8 * k))),
                          fg="#7d838b", bg=BG, anchor="w").pack(fill="x", pady=(4, 0))
                 slot[2] = key
             px, py = b["pos"]

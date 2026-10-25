@@ -19,10 +19,16 @@ import statistics
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 
+import i18n
 from paths import user_dir
 from shoptip import loose
 
 SESSIONS = user_dir("sessions")
+
+
+def L(ru, en):
+    """Строка на языке интерфейса программы."""
+    return en if i18n.LANG == "en" else ru
 
 
 # ---------- данные ----------
@@ -96,7 +102,7 @@ def money(x):
 def bar_table(title, rows, value_label, fmt=lambda v: f"{v:,.0f}".replace(",", " "), extra_head=(), note=""):
     """rows: [(подпись, значение, [доп. колонки...])]. Полоска — длина значения относительно максимума."""
     if not rows:
-        return f'<section><h2>{esc(title)}</h2><p class="muted">Пока нет данных.</p></section>'
+        return f'<section><h2>{esc(title)}</h2><p class="muted">{L("Пока нет данных.", "No data yet.")}</p></section>'
     top = max(v for _, v, *_ in rows) or 1
     head = "".join(f"<th>{esc(h)}</th>" for h in extra_head)
     body = []
@@ -159,14 +165,14 @@ def build(nick):
     profit = sum(m.get("profit", 0) for m in matches)
     kd = f"{len(my_kills) / len(my_deaths):.2f}" if my_deaths else "—"
     dists = [num(r["distance_m"]) for r in my_kills if num(r.get("distance_m"))]
-    out = [f"<h1>WARDOGS — статистика {esc(nick)}</h1>",
-           f'<p class="muted">Сессий: {len(sessions)} · данные из ленты убийств, журнала урона и экранов итогов · '
-           f'ники склеены с учётом ошибок распознавания</p>']
+    out = [f"<h1>{L('WARDOGS — статистика', 'WARDOGS — statistics')} {esc(nick)}</h1>",
+           f'<p class="muted">{L("Сессий", "Sessions")}: {len(sessions)} · '
+           f'{L("данные из ленты убийств, журнала урона и экранов итогов · ники склеены с учётом ошибок распознавания", "data from the kill feed, damage log and match result screens · nicknames merged to account for OCR errors")}</p>']
     out.append(tiles([
-        ("Матчей с итогами", f"{len(matches)} ({wins} побед)" if matches else "—"),
-        ("Прибыль за матчи", money(profit) if matches else "—"),
-        ("Убийств", len(my_kills)), ("Смертей", len(my_deaths)), ("K/D", kd),
-        ("Самое дальнее убийство", f"{max(dists):.0f} м" if dists else "—"),
+        (L("Матчей с итогами", "Matches with results"), f"{len(matches)} ({wins} {L('побед', 'wins')})" if matches else "—"),
+        (L("Прибыль за матчи", "Profit from matches"), money(profit) if matches else "—"),
+        (L("Убийств", "Kills"), len(my_kills)), (L("Смертей", "Deaths"), len(my_deaths)), ("K/D", kd),
+        (L("Самое дальнее убийство", "Longest kill"), f"{max(dists):.0f} {L('м', 'm')}" if dists else "—"),
     ]))
 
     sections = []
@@ -182,12 +188,12 @@ def build(nick):
             total[k] += num(r["value"])
             count[k] += 1
         rows = [(k, v, [f"×{count[k]}"]) for k, v in sorted(total.items(), key=lambda kv: -kv[1])]
-        sections.append(bar_table("На чём зарабатываешь", rows, "$", fmt=money, extra_head=("раз",),
-                                  note="Из журнала урона. Видна только та часть журнала, что была на экране, когда ты его открывал."))
+        sections.append(bar_table(L("На чём зарабатываешь", "How you earn money"), rows, "$", fmt=money, extra_head=(L("раз", "times"),),
+                                  note=L("Из журнала урона. Видна только та часть журнала, что была на экране, когда ты его открывал.", "From the damage log. Only the part of the log that was on screen when you opened it is counted.")))
     if matches:
         rows = [(f"{m.get('time', m['session'])} — {m.get('result', '?')}", m.get("profit", 0),
                  [money(m.get("earned", 0)), money(m.get("spent", 0))]) for m in matches]
-        sections.append(bar_table("Матчи", rows, "прибыль", fmt=money, extra_head=("заработано", "потрачено")))
+        sections.append(bar_table(L("Матчи", "Matches"), rows, L("прибыль", "profit"), fmt=money, extra_head=(L("заработано", "earned"), L("потрачено", "spent"))))
 
     # --- твоё оружие
     by_w = defaultdict(lambda: [0, 0.0, 0])  # попадания, урон, убийства
@@ -199,18 +205,18 @@ def build(nick):
     for r in my_kills:
         by_w[r.get("weapon") or "?"][2] += 1
     rows = [(w, v[2], [v[0], f"{v[1]:.0f}"]) for w, v in sorted(by_w.items(), key=lambda kv: (-kv[1][2], -kv[1][0])) if w != "?"]
-    sections.append(bar_table("Твоё оружие", rows, "убийств", extra_head=("попаданий", "урон"),
-                              note="Убийства — из ленты, попадания и урон — из журнала урона."))
+    sections.append(bar_table(L("Твоё оружие", "Your weapons"), rows, L("убийств", "kills"), extra_head=(L("попаданий", "hits"), L("урон", "damage")),
+                              note=L("Убийства — из ленты, попадания и урон — из журнала урона.", "Kills come from the kill feed, hits and damage from the damage log.")))
 
     parts = Counter(r.get("part") for r in journal if r.get("type") == "урон нанесён" and r.get("part"))
-    sections.append(bar_table("Куда ты попадаешь", parts.most_common(), "попаданий"))
+    sections.append(bar_table(L("Куда ты попадаешь", "Where you hit"), parts.most_common(), L("попаданий", "hits")))
 
     # --- враги
-    sections.append(bar_table("Кто чаще всех убивает тебя", [(k, n, [Counter(r["weapon"] for r in my_deaths if r["killer"] == k).most_common(1)[0][0]])
+    sections.append(bar_table(L("Кто чаще всех убивает тебя", "Who kills you the most"), [(k, n, [Counter(r["weapon"] for r in my_deaths if r["killer"] == k).most_common(1)[0][0]])
                                                             for k, n in Counter(r["killer"] for r in my_deaths).most_common(10)],
-                              "раз", extra_head=("чем",)))
-    sections.append(bar_table("Кого чаще всех убиваешь ты", Counter(r["victim"] for r in my_kills).most_common(10), "раз"))
-    sections.append(bar_table("Из чего тебя убивают", Counter(r["weapon"] or "?" for r in my_deaths).most_common(), "раз"))
+                              L("раз", "times"), extra_head=(L("чем", "weapon"),)))
+    sections.append(bar_table(L("Кого чаще всех убиваешь ты", "Who you kill the most"), Counter(r["victim"] for r in my_kills).most_common(10), L("раз", "times")))
+    sections.append(bar_table(L("Из чего тебя убивают", "What you get killed with"), Counter(r["weapon"] or "?" for r in my_deaths).most_common(), L("раз", "times")))
 
     # --- другие игроки
     pk, pd, pw = Counter(), Counter(), defaultdict(Counter)
@@ -223,7 +229,7 @@ def build(nick):
             pd[r["victim"]] += 1
     rows = [(p, n, [pd[p], f"{n / pd[p]:.1f}" if pd[p] else "—", pw[p].most_common(1)[0][0] if pw[p] else "?"])
             for p, n in pk.most_common(20) if p != nick]
-    sections.append(bar_table("Лучшие игроки по убийствам", rows, "убийств", extra_head=("смертей", "K/D", "любимое оружие")))
+    sections.append(bar_table(L("Лучшие игроки по убийствам", "Top players by kills"), rows, L("убийств", "kills"), extra_head=(L("смертей", "deaths"), "K/D", L("любимое оружие", "favourite weapon"))))
 
     # --- мета оружия
     wk = Counter(r["weapon"] for r in feed if r.get("weapon") and r["weapon"] != "?")
@@ -232,9 +238,9 @@ def build(nick):
         d = num(r.get("distance_m"))
         if d and r.get("weapon"):
             wdist[r["weapon"]].append(d)
-    rows = [(w, n, [f"{statistics.median(wdist[w]):.0f} м" if wdist[w] else "—"]) for w, n in wk.most_common(20)]
-    sections.append(bar_table("Мета: каким оружием убивают чаще всего", rows, "убийств", extra_head=("медиана дистанции",),
-                              note="По всем убийствам в ленте. Дистанция видна только в строках с тобой."))
+    rows = [(w, n, [f"{statistics.median(wdist[w]):.0f} {L('м', 'm')}" if wdist[w] else "—"]) for w, n in wk.most_common(20)]
+    sections.append(bar_table(L("Мета: каким оружием убивают чаще всего", "Meta: weapons with the most kills"), rows, L("убийств", "kills"), extra_head=(L("медиана дистанции", "median distance"),),
+                              note=L("По всем убийствам в ленте. Дистанция видна только в строках с тобой.", "All kills in the feed. Distance is shown only in rows involving you.")))
 
     # --- по сессиям
     per = []
@@ -242,11 +248,11 @@ def build(nick):
         k = sum(1 for r in my_kills if r["session"] == sid)
         d = sum(1 for r in my_deaths if r["session"] == sid)
         per.append((sid, sum(1 for r in feed if r["session"] == sid), [k, d, f"{k / d:.2f}" if d else "—"]))
-    sections.append(bar_table("Сессии", per, "убийств в ленте", extra_head=("убил", "умер", "K/D")))
+    sections.append(bar_table(L("Сессии", "Sessions"), per, L("убийств в ленте", "kills in the feed"), extra_head=(L("убил", "killed"), L("умер", "died"), "K/D")))
 
     out.append('<div class="grid">' + "".join(sections) + "</div>")
-    return ("<!doctype html><html lang='ru'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
-            f"<title>WARDOGS статистика</title><style>{CSS}</style></head><body><main>{''.join(out)}</main></body></html>")
+    return (f"<!doctype html><html lang='{i18n.LANG}'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
+            f"<title>WARDOGS</title><style>{CSS}</style></head><body><main>{''.join(out)}</main></body></html>")
 
 
 def main():

@@ -20,10 +20,19 @@ from winocr import make_engine, recognize
 
 SEARCH = (0, 0, 3440, 1440)  # где искать подсказку при 3440x1440: весь экран (в инвентаре у рюкзака она справа)
 TABS = (150, 15, 1700, 110)  # строка вкладок вверху (и заголовок «ОБЫСКИВАНИЕ») — по ним понимаем, какое меню открыто
-MENU_WORDS = ("СНАРЯЖ", "ПРЕДМЕТ", "ОБЗОР", "РАССЫПН", "ИНВЕНТАР", "ТАБЛО", "ПРОГРЕСС", "ОБЫСК")
-ANCHORS = ("Плюсы", "Минусы", "Технические")
-WEIGHT_RE = re.compile(r"^\d+[,.]\d+\s*кг$")
-SKIP_HEADERS = ("СЕЙЧАС ИСПОЛЬЗУЕТСЯ", "СОДЕРЖИТ")  # служебные строки над/под названием в инвентаре
+# Слова игры на русском и английском — язык игры выбирать не нужно.
+# Английские написаны по аналогии с русскими и ещё не сверены с английской версией игры.
+MENU_WORDS = ("СНАРЯЖ", "ПРЕДМЕТ", "ОБЗОР", "РАССЫПН", "ИНВЕНТАР", "ТАБЛО", "ПРОГРЕСС", "ОБЫСК",
+              "OVERVIEW", "EQUIPMENT", "GEAR", "ITEMS", "LOOSE", "INVENTORY", "SCOREBOARD", "PROGRESS", "SEARCH", "LOOT")
+ANCHORS = ("Плюсы", "Минусы", "Технические", "Pros", "Cons", "Technical", "Specifications")
+WEIGHT_RE = re.compile(r"^\d+[,.]\d+\s*(кг|kg)$", re.I)
+# Тип предмета (строка под названием), у которого точно не обвес: оружие, патроны, броня, снаряжение
+NOT_ATTACHMENT_KINDS = ("ВИНТОВК", "ПУЛЕМЕТ", "ПУЛЕМЁТ", "ПП", "ДРОБОВИК", "ПИСТОЛЕТ", "УСТАНОВК", "БОЕПРИПАС", "БРОНЯ",
+                        "ШЛЕМ", "СПЕЦПРЕДМЕТ", "ЭКИПИРОВКА", "СНАРЯЖ", "ЛУК", "ГРАНАТ", "МЕДИЦИН", "РЮКЗАК", "ЖИЛЕТ",
+                        "RIFLE", "LMG", "SMG", "SHOTGUN", "PISTOL", "LAUNCHER", "AMMO", "ARMOR", "ARMOUR", "HELMET",
+                        "SPECIAL", "EQUIPMENT", "GEAR", "BOW", "GRENADE", "MEDICAL", "BACKPACK", "VEST")
+# служебные строки над/под названием в инвентаре
+SKIP_HEADERS = ("СЕЙЧАС ИСПОЛЬЗУЕТСЯ", "СОДЕРЖИТ", "CURRENTLY", "IN USE", "CONTAINS")
 ALIGN = 25        # насколько строки подсказки могут расходиться по левому краю (пиксели)
 TITLE_GAP = 60    # максимум пустого места между строками названия и строкой типа
 
@@ -41,6 +50,7 @@ def load_items(path=None):
         items = json.load(f)
     for it in items:
         it["_key"] = loose(it["name_ru"])
+        it["_key_en"] = loose(it.get("name_en", ""))  # для английской версии игры
     return items
 
 
@@ -85,7 +95,7 @@ def tooltip_above(lines, anchor):
     # вес: в магазине — справа в строке типа, в инвентаре — отдельной строкой под типом
     top, bottom = block[0]["box"][1], anchor["box"][3] + 40
     weight = next((m.group(1) for l in lines if top <= l["box"][1] <= bottom and ax - ALIGN <= l["box"][0] <= ax + 900
-                   for m in [re.search(r"(\d+[,.]\d+)\s*кг", l["text"])] if m), None)
+                   for m in [re.search(r"(\d+[,.]\d+)\s*(?:кг|kg)", l["text"], re.I)] if m), None)
     return title, kind, (block[0]["box"][0], block[0]["box"][1]), weight
 
 
@@ -101,7 +111,9 @@ def match(title, items, weight=None, threshold=0.6):
     key, w = loose(title), kg(weight)
     best, score = None, 0.0
     for it in items:
-        s = SequenceMatcher(None, key, it["_key"]).ratio()
+        # название сравниваем и с русским, и с английским — игра может быть на любом из языков
+        s = max(SequenceMatcher(None, key, it["_key"]).ratio(),
+                SequenceMatcher(None, key, it["_key_en"]).ratio() if it.get("_key_en") else 0)
         iw = kg(it["stats"].get("Вес"))
         if w is not None and iw is not None and abs(iw - w) > 0.005:
             s -= 0.3
@@ -135,6 +147,8 @@ class ShopTip:
         if tip is None:
             return None
         title, kind, pos, weight = tip
+        if any(w in kind.upper() for w in NOT_ATTACHMENT_KINDS):
+            return None  # подсказка оружия, патронов, брони — не обвес (иначе «ПКМ» находился как «Сошка ПКМ»)
         item, score = match(title, self.items, weight)
         if item is None:
             from builds import weapon_of

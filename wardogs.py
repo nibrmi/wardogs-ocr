@@ -16,6 +16,7 @@
 """
 import argparse
 import queue
+import re
 import signal
 import threading
 import time
@@ -26,6 +27,7 @@ import journal
 from builds import Builds
 from endscreen import EndScreen
 from feedreader import FeedReader
+from i18n import t
 from live import (Session, WindowGrabber, client_rect_on_screen, find_game_window, lower_priority,
                   user32)
 from feedreader import KILLFEED
@@ -46,6 +48,7 @@ class Settings:
     tick: float = 0.4          # как часто проверять экран, секунд — главный рычаг нагрузки
     feed_interval: float = 1.5 # как часто читать ленту убийств, секунд
     print_all: bool = False
+    ui_lang: str = ""          # язык программы: "ru" / "en"; пусто — по языку Windows
 
 
 def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: Settings, holder: dict):
@@ -67,8 +70,7 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
             grabber, grabber_hwnd = None, hwnd
             if hwnd:
                 grabber = WindowGrabber(hwnd, region=None, finish=lambda img: img, interval_ms=300)
-        new_state = ("Жду окно WARDOGS…" if hwnd is None else
-                     "Игра свёрнута — пауза." if user32.IsIconic(hwnd) else "Игра найдена — работаю.")
+        new_state = (t("wait_game") if hwnd is None else t("minimized") if user32.IsIconic(hwnd) else t("working"))
         if new_state != state:
             session.note(new_state)
             state = new_state
@@ -89,7 +91,7 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
         if in_shop and (settings.tips or settings.builds):
             tip = st.read(base, tabs)  # заодно распознаёт весь кадр — строки нужны и для сборок
             out.put({"kind": "tip", "r": tip if settings.tips else None, "wx": x, "wy": y, "k": k})
-            show_builds = settings.builds and any(w in tabs for w in ("ИНВЕНТАР", "ОБЫСК"))
+            show_builds = settings.builds and any(w in tabs.upper() for w in ("ИНВЕНТАР", "ОБЫСК", "INVENTORY", "SEARCH", "LOOT"))
             out.put({"kind": "builds", "list": builder.find(base, st.last_lines) if show_builds else [],
                      "wx": x, "wy": y, "k": k})
         else:
@@ -97,12 +99,13 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
             out.put({"kind": "builds", "list": []})
 
         # 2) экран итогов матча (вкладка «СЧЕТ»): копим строки, пока он открыт
+        score_tab = bool("СЧЕТ" in tabs or re.search(r"\bSCORE\b", tabs.upper()))  # англ. название — предположение
         if settings.endscreen:
-            done = ends.feed(base if "СЧЕТ" in tabs else None)
+            done = ends.feed(base if score_tab else None)
             if done:
                 session.add_match(done)
 
-        in_menu = in_shop or "СЧЕТ" in tabs
+        in_menu = in_shop or score_tab
         # 3) журнал урона: открывается на экране смерти по B
         journal_now = settings.journal and not in_menu and journal.is_open(st.engine, base)
         if journal_now:
@@ -120,7 +123,7 @@ def worker(out: queue.Queue, stop: threading.Event, session: Session, settings: 
             feed_reads += 1
         if tick - last_report >= 300:  # раз в 5 минут — отметка в журнале сессии, чтобы было видно, что всё работает
             last_report = tick
-            session.note(f"Работаю: прочитано снимков ленты {feed_reads}, убийств записано {len(session.kills)}.")
+            session.note(t("alive", n=feed_reads, k=len(session.kills)))
 
         time.sleep(max(0.0, settings.tick - (time.monotonic() - tick)))
     if grabber:

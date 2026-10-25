@@ -13,8 +13,10 @@ from winocr import make_engine, recognize
 
 TITLE = (1000, 150, 2450, 460)    # «ПОБЕДА» / «ПОРАЖЕНИЕ» при 3440x1440
 PANEL = (1150, 500, 2300, 1110)   # очки команд и строки с деньгами
-ROWS = {  # подпись в игре -> поле
+ROWS = {  # подпись в игре -> поле (английские — предположение по аналогии, не сверены с английской версией игры)
     "МЕСТО": "place_bonus", "ПОТРАЧЕНО": "spent", "ЗАРАБОТАНО": "earned", "ВОЗВРАЩЕНЫ": "refunded", "ПРИБЫЛЬ": "profit",
+    "PLACE": "place_bonus", "SPENT": "spent", "EARNED": "earned", "REFUND": "refunded", "RETURNED": "refunded",
+    "PROFIT": "profit",
 }
 MONEY_RE = re.compile(r"([-–—]?)\s*\$\s*([\dЗО ]+)")
 
@@ -52,7 +54,9 @@ def read(engine, frame: Image.Image):
     """frame — кадр 3440x1440. Возвращает dict с итогами или None, если это не экран итогов."""
     from layout import centered  # экран итогов стоит по центру — на экранах другой ширины сдвигаем
     title = " ".join(l["text"] for l in recognize(engine, bright(frame.crop(centered(TITLE, frame.width)), scale=1)))
-    result = "победа" if "ПОБЕД" in title else "поражение" if "ПОРАЖ" in title else None
+    up = title.upper()
+    result = ("победа" if "ПОБЕД" in up or "VICTORY" in up else
+              "поражение" if "ПОРАЖ" in up or "DEFEAT" in up else None)
     if result is None:
         return None
     out = {"result": result}
