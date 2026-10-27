@@ -10,6 +10,17 @@ shows on screen and turns it into numbers and statistics.
 > game window through Windows Graphics Capture (the same mechanism as OBS "Window Capture") and recognises text with
 > the built-in Windows OCR.
 
+## ⚠️ Disclaimer — use at your own risk
+
+I asked Team17 Support about this tool. Their answer: third-party software that **modifies or automates gameplay** in a
+way that provides an **unfair advantage** may violate their anti-cheat policies, and they cannot guarantee the
+compatibility or safety of individual third-party applications.
+
+This tool does **not** modify or automate anything: it doesn't touch game files or memory, doesn't inject into the game,
+doesn't intercept traffic and doesn't send any input. It only reads the image of the game window. The statistics are
+about your own past matches, and the attachment numbers are public information from community sites.
+Still, there is **no official approval** from BULKHEAD or Team17 — **use it at your own risk**.
+
 ## Features
 
 | Feature | How it works |
